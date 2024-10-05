@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://mwjum5nl8jhb"]
+
+[ext_resource type="Texture2D" uid="uid://2l8s6475lp5x" path="res://assets/shroomy/shroomy_sprite_sheet.png" id="1_q4fy1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e10xs"]
+atlas = ExtResource("1_q4fy1")
+region = Rect2(0, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6lfb"]
+atlas = ExtResource("1_q4fy1")
+region = Rect2(0, 33, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnnyr"]
+atlas = ExtResource("1_q4fy1")
+region = Rect2(0, 66, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_466kc"]
+atlas = ExtResource("1_q4fy1")
+region = Rect2(0, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbjbi"]
+atlas = ExtResource("1_q4fy1")
+region = Rect2(0, 99, 31, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uc6lu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e10xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6lfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnnyr")
+}],
+"loop": true,
+"name": &"grab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_466kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbjbi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shroomy" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uc6lu")
+animation = &"grab"
+autoplay = "idle"
+frame_progress = 0.720161

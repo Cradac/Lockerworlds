@@ -1,26 +1,31 @@
-[gd_scene load_steps=2 format=4 uid="uid://b4jqktvirfcky"]
+[gd_scene load_steps=3 format=4 uid="uid://b4jqktvirfcky"]
 
+[ext_resource type="PackedScene" uid="uid://mwjum5nl8jhb" path="res://objects/shroomy.tscn" id="1_tuouo"]
 [ext_resource type="PackedScene" uid="uid://b2ykymb3dcape" path="res://objects/proto_tile_map.tscn" id="1_u0uuf"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Shroomy" parent="." instance=ExtResource("1_tuouo")]
+z_index = 999
+position = Vector2(-2, 45)
+
+[node name="Level" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="l0" parent="Node2D" instance=ExtResource("1_u0uuf")]
+[node name="l0" parent="Level" instance=ExtResource("1_u0uuf")]
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="l1" parent="Node2D" instance=ExtResource("1_u0uuf")]
+[node name="l1" parent="Level" instance=ExtResource("1_u0uuf")]
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD+////AAAAAAIAAAD+//7/AAAAAAIAAAD///7/AAAAAAIAAAAAAP7/AAAAAAIAAAABAP7/AAAAAAIAAAD/////AAADAAEAAAABAAEAAAADAAUAAAA=")
+tile_map_data = PackedByteArray("AAABAAEAAAADAAUAAAD/////AAADAAEAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD+////AAAAAAIAAAD+//7/AAAAAAIAAAD///7/AAAAAAIAAAAAAP7/AAAAAAIAAAABAP7/AAAAAAIAAAA=")
 y_sort_origin = 1
 
-[node name="l2" parent="Node2D" instance=ExtResource("1_u0uuf")]
+[node name="l2" parent="Level" instance=ExtResource("1_u0uuf")]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
