@@ -1,0 +1,233 @@
+[gd_scene load_steps=10 format=3 uid="uid://lyxusyca41vh"]
+
+[ext_resource type="Script" path="res://objects/locker.gd" id="1_tpqgi"]
+[ext_resource type="Texture2D" uid="uid://cb3pobuf3l2mq" path="res://assets/overworld/Locker2.png" id="2_vjgc3"]
+[ext_resource type="Texture2D" uid="uid://bcypcaxdfq4m2" path="res://assets/overworld/Locker3.png" id="3_x8pfl"]
+[ext_resource type="Texture2D" uid="uid://b8w7t1wwp6npr" path="res://assets/overworld/tag.png" id="4_6xlcc"]
+[ext_resource type="Texture2D" uid="uid://bolhpu3mcsaes" path="res://assets/overworld/Locker4.png" id="4_utyih"]
+[ext_resource type="Texture2D" uid="uid://c4jinwr0gospy" path="res://assets/overworld/Locker5.png" id="5_uwv2w"]
+[ext_resource type="Texture2D" uid="uid://cn7l247hutxri" path="res://assets/overworld/Locker6.png" id="6_u2b24"]
+[ext_resource type="Texture2D" uid="uid://b7ctresqsnvx6" path="res://assets/overworld/lock2.png" id="7_xbq5s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1r51t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjgc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x8pfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_utyih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uwv2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u2b24")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Locker" type="Node2D"]
+script = ExtResource("1_tpqgi")
+
+[node name="Locker_Texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(387, 393)
+sprite_frames = SubResource("SpriteFrames_1r51t")
+
+[node name="Locker" type="Node2D" parent="."]
+
+[node name="Lock" type="Sprite2D" parent="Locker"]
+position = Vector2(179, 315)
+scale = Vector2(0.415767, 0.415767)
+texture = ExtResource("7_xbq5s")
+
+[node name="0" type="Node2D" parent="Locker/Lock"]
+
+[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/0"]
+offset_left = -137.663
+offset_top = 88.1905
+offset_right = -112.663
+offset_bottom = 115.19
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/0"]
+offset_left = -174.23
+offset_top = 88.1905
+offset_right = -149.23
+offset_bottom = 115.19
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/0"]
+offset_left = -103.247
+offset_top = 88.1905
+offset_right = -78.2473
+offset_bottom = 115.19
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="1" type="Node2D" parent="Locker/Lock"]
+
+[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/1"]
+offset_left = -137.681
+offset_top = 169.928
+offset_right = -112.681
+offset_bottom = 196.928
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/1"]
+offset_left = -174.23
+offset_top = 169.928
+offset_right = -149.23
+offset_bottom = 196.928
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/1"]
+offset_left = -103.247
+offset_top = 169.928
+offset_right = -78.2473
+offset_bottom = 196.928
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="2" type="Node2D" parent="Locker/Lock"]
+
+[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/2"]
+offset_left = -137.681
+offset_top = 247.363
+offset_right = -112.681
+offset_bottom = 274.363
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/2"]
+offset_left = -174.23
+offset_top = 247.363
+offset_right = -149.23
+offset_bottom = 274.363
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/2"]
+offset_left = -103.247
+offset_top = 247.363
+offset_right = -78.2474
+offset_bottom = 274.363
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="3" type="Node2D" parent="Locker/Lock"]
+
+[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/3"]
+offset_left = -137.681
+offset_top = 324.799
+offset_right = -112.681
+offset_bottom = 351.799
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/3"]
+offset_left = -172.079
+offset_top = 324.799
+offset_right = -147.079
+offset_bottom = 351.799
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/3"]
+offset_left = -101.096
+offset_top = 324.799
+offset_right = -76.0964
+offset_bottom = 351.799
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Tag" type="Sprite2D" parent="Locker"]
+position = Vector2(383, 178)
+scale = Vector2(0.238299, 0.238299)
+texture = ExtResource("4_6xlcc")
+
+[node name="Label" type="RichTextLabel" parent="Locker/Tag"]
+offset_left = -205.624
+offset_top = -134.285
+offset_right = -105.624
+offset_bottom = -69.2847
+scale = Vector2(4.19085, 4.47949)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+scroll_active = false
+tab_size = 8

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://b2ykymb3dcape"]
 
-[ext_resource type="TileSet" uid="uid://db0dcwvwu0fd3" path="res://objects/tileset.tres" id="1_yu7ru"]
+[ext_resource type="TileSet" uid="uid://2cgab3cvpjma" path="res://objects/tileset.tres" id="1_yu7ru"]
 
 [node name="ProtoTileMap" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAD/////AAAAAAIAAAD//wAAAAAAAAIAAAD//wEAAAAAAAIAAAD//wIAAAAAAAIAAAAAAP//AAAAAAIAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAIAAAABAP//AAAAAAIAAAABAAAAAAAAAAIAAAABAAEAAAAAAAIAAAABAAIAAAAAAAIAAAACAP//AAAAAAIAAAACAAAAAAAAAAIAAAACAAEAAAAAAAIAAAACAAIAAAAAAAIAAAA=")

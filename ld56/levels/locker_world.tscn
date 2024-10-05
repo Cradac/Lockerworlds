@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wcndxecmb5rf"]
+
+[ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
+
+[node name="LockerWorld" type="Node2D"]
+
+[node name="Locker" parent="." instance=ExtResource("1_50qx8")]
+position = Vector2(38, 48)
+scale = Vector2(0.253785, 0.253785)
