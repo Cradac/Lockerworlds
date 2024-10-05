@@ -11,6 +11,9 @@ var movement_target_position: Vector2 = Vector2(randi_range(20,1100), randi_rang
 
 var nav_agent_type = preload("res://AgentNav.tscn")
 @onready var navigation_agent: NavigationAgent2D
+
+@onready
+var poi_array: Array[PointOfInterest] = get_parent().poi
 	
 func _ready():
 	# These values need to be adjusted for the actor's speed
@@ -62,6 +65,6 @@ func _on_target_reached() -> void:
 	
 	navigation_agent.queue_free()
 	create_nav_agent()
-	var new_target = Vector2(randi_range(20,1100), randi_range(20,600))
+	var new_target = poi_array.pick_random().position
 	
 	set_movement_target(new_target)
