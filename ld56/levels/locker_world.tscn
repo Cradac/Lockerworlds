@@ -5,5 +5,5 @@
 [node name="LockerWorld" type="Node2D"]
 
 [node name="Locker" parent="." instance=ExtResource("1_50qx8")]
-position = Vector2(38, 48)
+position = Vector2(50, 48)
 scale = Vector2(0.253785, 0.253785)
