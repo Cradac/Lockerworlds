@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6bgntgij57xi"
-path="res://.godot/imported/Lock.png-3681a1df4e912d8198734f242f871bd8.ctex"
+uid="uid://bcypcaxdfq4m2"
+path="res://.godot/imported/Locker3.png-74e6202290b72f911d12b2440b1b0b14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/overworld/Lock.png"
-dest_files=["res://.godot/imported/Lock.png-3681a1df4e912d8198734f242f871bd8.ctex"]
+source_file="res://assets/overworld/Locker3.png"
+dest_files=["res://.godot/imported/Locker3.png-74e6202290b72f911d12b2440b1b0b14.ctex"]
 
 [params]
 
