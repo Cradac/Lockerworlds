@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqscd"]
 
-[node name="Agent" type="CharacterBody2D"]
+[node name="Agent" type="CharacterBody2D" groups=["agents"]]
 input_pickable = true
 script = ExtResource("1_gdgd0")
 

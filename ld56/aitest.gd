@@ -16,7 +16,6 @@ var poi: Array[PointOfInterest] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	
 	var cellPositions: Array[Vector2i] = tileMap.get_used_cells()
 	for position in cellPositions:
 		var tileData: TileData = tileMap.get_cell_tile_data(position)

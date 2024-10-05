@@ -12,8 +12,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-576, -323, 576, -323, 
 [node name="Node2D" type="Node2D"]
 position = Vector2(576, 320)
 script = ExtResource("1_bc4ma")
-amount_spawned = 5
-spread = 200
+amount_spawned = 25
+spread = 300
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_vm37u")

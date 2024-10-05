@@ -40,7 +40,7 @@ func actor_setup():
 	set_movement_target(movement_target_position)
 
 func set_movement_target(movement_target: Vector2):
-	debug.text = str(movement_target.x) + "," + str(movement_target.y)
+	#debug.text = str(movement_target.x) + "," + str(movement_target.y)
 	navigation_agent.target_position = movement_target
 	navigation_agent.get_next_path_position()
 
@@ -69,7 +69,7 @@ func _on_target_reached() -> void:
 		var action_class = possible_actions.pick_random()
 		var action: AgentAction = action_class.new() as AgentAction
 		
-		var timeout: int = action.do_action()
+		var timeout: int = action.do_action_at(target_poi.position)
 		debug.text = action.emoji
 		timer.start(timeout)
 		return
@@ -78,6 +78,7 @@ func _on_target_reached() -> void:
 		create_nav_agent()
 		target_poi = poi_array.pick_random()
 		var new_target = target_poi.position
+		debug.text = ""
 		
 		set_movement_target(new_target)
 
@@ -89,3 +90,19 @@ func _on_timer_timeout() -> void:
 	var new_target = target_poi.position
 	
 	set_movement_target(new_target)
+	
+func alert_to_risk(risk: Risk) -> void:
+	var distance = to_global(self.position).distance_to(risk.position)
+	#print("Got alerted to risk with distance "+str(distance))
+	if distance < risk.alert_range:
+		debug.text = risk.emoji
+		timer.stop()
+		
+		navigation_agent.queue_free()
+		create_nav_agent()
+		target_poi = null
+		var new_target = Vector2(randi_range(20,1100), randi_range(20,600))
+		
+		set_movement_target(new_target)
+	
+	
