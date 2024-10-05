@@ -64,3 +64,19 @@ func set_lock():
 func center_text(text):
 	text = "[center]%s[/center]" % text
 	return text
+	
+func check_code():
+	if LOCK_CODE == LOCK_POSITION:
+		print("richtig")
+		#TODO hier szene öffnen
+		
+func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
+	if event is InputEventMouseButton:
+		var evt = event as InputEventMouseButton
+		if evt.pressed:
+			if is_left:
+				LOCK_POSITION[index] = LOCK_POSITION[index] - 1 % 10
+			else:
+				LOCK_POSITION[index] = LOCK_POSITION[index] + 1 % 10
+			set_lock()
+			check_code()

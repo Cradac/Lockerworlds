@@ -231,3 +231,12 @@ theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 scroll_active = false
 tab_size = 8
+
+[connection signal="gui_input" from="Locker/Lock/0/lock_l" to="." method="_lock_clicked" binds= [true, 0]]
+[connection signal="gui_input" from="Locker/Lock/0/lock_r" to="." method="_lock_clicked" binds= [false, 0]]
+[connection signal="gui_input" from="Locker/Lock/1/lock_l" to="." method="_lock_clicked" binds= [true, 1]]
+[connection signal="gui_input" from="Locker/Lock/1/lock_r" to="." method="_lock_clicked" binds= [false, 1]]
+[connection signal="gui_input" from="Locker/Lock/2/lock_l" to="." method="_lock_clicked" binds= [true, 2]]
+[connection signal="gui_input" from="Locker/Lock/2/lock_r" to="." method="_lock_clicked" binds= [false, 2]]
+[connection signal="gui_input" from="Locker/Lock/3/lock_l" to="." method="_lock_clicked" binds= [true, 3]]
+[connection signal="gui_input" from="Locker/Lock/3/lock_r" to="." method="_lock_clicked" binds= [false, 3]]
