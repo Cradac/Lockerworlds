@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4jqktvirfcky"]
+[gd_scene load_steps=2 format=4 uid="uid://b4jqktvirfcky"]
 
-[ext_resource type="PackedScene" uid="uid://dwiv7hbatkqhf" path="res://objects/tile_map.tscn" id="1_x2bl1"]
+[ext_resource type="PackedScene" uid="uid://b2ykymb3dcape" path="res://objects/proto_tile_map.tscn" id="1_u0uuf"]
 
 [node name="Main" type="Node2D"]
 
-[node name="TileMap" parent="." instance=ExtResource("1_x2bl1")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="l0" parent="Node2D" instance=ExtResource("1_u0uuf")]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="l1" parent="Node2D" instance=ExtResource("1_u0uuf")]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD+////AAAAAAIAAAD+//7/AAAAAAIAAAD///7/AAAAAAIAAAAAAP7/AAAAAAIAAAABAP7/AAAAAAIAAAD/////AAADAAEAAAABAAEAAAADAAUAAAA=")
+y_sort_origin = 1
+
+[node name="l2" parent="Node2D" instance=ExtResource("1_u0uuf")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+//3/AAABAAwAAAD///3/AAABAAwAAAAAAP3/AAABAAwAAAD9//7/AAAAAAwAAAD9////AAAAAAwAAAD9/wAAAAAAAAwAAAD9//3/AAACAAoAAAA=")
+y_sort_origin = 2
