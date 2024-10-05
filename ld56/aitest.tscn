@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyrqjppexh7ki"]
+
+[ext_resource type="Script" path="res://aitest.gd" id="1_bc4ma"]
+[ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="2_anqoi"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vm37u"]
+vertices = PackedVector2Array(566.977, 313, -563.039, 313.992, -565.773, -273.859, -565.953, -313, 566.023, -313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-576, -323, 576, -323, 577, 323, -573, 324, -575.772, -273.809)])
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(576, 320)
+script = ExtResource("1_bc4ma")
+amount_spawned = 25
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_vm37u")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(-133, 85)
+radius = 40.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-134, 84)
+scale = Vector2(0.496094, 0.464844)
+texture = ExtResource("2_anqoi")

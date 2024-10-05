@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://g43225g3k6pa"]
+
+[ext_resource type="Script" path="res://Agent.gd" id="1_gdgd0"]
+[ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="2_564jb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqscd"]
+
+[node name="Agent" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_gdgd0")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(2.08616e-07, 7.15256e-07)
+scale = Vector2(0.15625, 0.234375)
+texture = ExtResource("2_564jb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sqscd")
+
+[node name="DebugLable" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = -1.0
