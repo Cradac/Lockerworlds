@@ -1,19 +1,19 @@
 class_name Agent extends CharacterBody2D
 
-@onready
-var debug = $DebugLable
+@onready var debug = $DebugLable
+@onready var timer: Timer = $Timer
 
 @export
 var movement_speed: float = 100.0
 
-var updateTarget: bool = true
 var movement_target_position: Vector2 = Vector2(randi_range(20,1100), randi_range(20,600))
 
-var nav_agent_type = preload("res://AgentNav.tscn")
+var nav_agent_type = preload("res://agents/AgentNav.tscn")
 @onready var navigation_agent: NavigationAgent2D
 
 @onready
 var poi_array: Array[PointOfInterest] = get_parent().poi
+var target_poi: PointOfInterest
 	
 func _ready():
 	# These values need to be adjusted for the actor's speed
@@ -63,8 +63,29 @@ func _on_velocity_computed(safe_velocity: Vector2):
 
 func _on_target_reached() -> void:
 	
+	if target_poi:
+		# Trigger PoI Action
+		var possible_actions: Array = target_poi.possible_actions.get(target_poi.poi_type) as Array
+		var action_class = possible_actions.pick_random()
+		var action: AgentAction = action_class.new() as AgentAction
+		
+		var timeout: int = action.do_action()
+		debug.text = action.emoji
+		timer.start(timeout)
+		return
+	else:
+		navigation_agent.queue_free()
+		create_nav_agent()
+		target_poi = poi_array.pick_random()
+		var new_target = target_poi.position
+		
+		set_movement_target(new_target)
+
+
+func _on_timer_timeout() -> void:
 	navigation_agent.queue_free()
 	create_nav_agent()
-	var new_target = poi_array.pick_random().position
+	target_poi = poi_array.pick_random()
+	var new_target = target_poi.position
 	
 	set_movement_target(new_target)

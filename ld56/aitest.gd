@@ -6,7 +6,7 @@ var amount_spawned = 10
 @export
 var spread = 100
 
-var agent = preload("res://Agent.tscn")
+var agent = preload("res://agents/Agent.tscn")
 
 @onready
 var tileMap: TileMapLayer = $TileMapLayer
