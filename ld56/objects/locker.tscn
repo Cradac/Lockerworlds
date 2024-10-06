@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lyxusyca41vh"]
+[gd_scene load_steps=13 format=3 uid="uid://lyxusyca41vh"]
 
 [ext_resource type="Script" path="res://objects/locker.gd" id="1_tpqgi"]
 [ext_resource type="Texture2D" uid="uid://cb3pobuf3l2mq" path="res://assets/overworld/Locker2.png" id="2_vjgc3"]
@@ -47,6 +47,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SystemFont" id="SystemFont_j5qbh"]
+generate_mipmaps = true
+force_autohinter = true
+hinting = 2
+subpixel_positioning = 3
+multichannel_signed_distance_field = true
+msdf_pixel_range = 8
+
 [node name="Locker" type="Node2D"]
 script = ExtResource("1_tpqgi")
 
@@ -74,6 +82,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -88,6 +97,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -102,6 +112,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -120,6 +131,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -133,6 +145,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -146,6 +159,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -163,6 +177,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -176,6 +191,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -189,6 +205,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -206,6 +223,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -219,6 +237,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -232,6 +251,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -250,6 +270,7 @@ scale = Vector2(4.19085, 4.47949)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = SubResource("SystemFont_j5qbh")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 scroll_active = false
