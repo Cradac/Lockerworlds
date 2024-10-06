@@ -1,7 +1,7 @@
 class_name AgentAction extends Node2D
 
 var time_spent: int = 5
-var emoji: String = "⁉️"
+var emoji: String = "beefing"
 var poi: PointOfInterest
 
 var possible_risks: Array[Risk] = []

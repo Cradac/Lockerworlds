@@ -12,8 +12,8 @@ func _init(type: String, pos: Vector2i, world: World) -> void:
 	global_position = pos
 	self.tileMap = world.tileMap
 	self.world = world
-	
-	
+
+
 
 enum POI_TYPE {
 	CAMPFIRE, GARDEN, LAMP, RIVER, GODOTZILLA

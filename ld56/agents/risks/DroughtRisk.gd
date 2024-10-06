@@ -2,7 +2,7 @@ class_name DroughtRisk extends Risk
 
 func _init() -> void:
 	morale_damage_per_second = 10
-	emoji = "☔"
+	emoji = "hunger"
 	chance = 0.5
 	alert_range = 100
 	

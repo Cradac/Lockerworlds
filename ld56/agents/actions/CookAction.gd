@@ -2,6 +2,6 @@ class_name CookAction extends AgentAction
 
 func _init() -> void:
 	time_spent = 15
-	emoji = "👨‍🍳"
+	emoji = "cooking"
 	
 	possible_risks = [FireRisk.new()]

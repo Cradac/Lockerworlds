@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcx7lmtocd5wq"]
+[gd_scene load_steps=14 format=3 uid="uid://dc2ok2vm83t5l"]
 
 [ext_resource type="Script" path="res://objects/bubble.gd" id="1_ugqud"]
 [ext_resource type="Texture2D" uid="uid://bpegwltwmklog" path="res://assets/overworld/speechbubble.png" id="2_mvf3s"]
@@ -105,9 +105,11 @@ script = ExtResource("1_ugqud")
 position = Vector2(24, 24)
 sprite_frames = SubResource("SpriteFrames_310v8")
 animation = &"speaking"
+speed_scale = 0.0
 
 [node name="Action" type="AnimatedSprite2D" parent="Bubble"]
-position = Vector2(-40, 0)
-scale = Vector2(0.44452, 0.44452)
+position = Vector2(-64, 17)
+scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_6pddk")
-animation = &"power"
+animation = &"beefing"
+speed_scale = 0.0

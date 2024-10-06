@@ -19,9 +19,7 @@ func _process(delta: float) -> void:
 	self.set_global_rotation(angle)
 	if Input.is_action_just_released("settings"):
 		pass
-	
-	
-	
+
 func controller(delta):
 	var movement = Vector2(0,0)
 	if Input.is_action_just_pressed("action"):
@@ -34,14 +32,14 @@ func controller(delta):
 		JoyClick.position = get_viewport().get_mouse_position()
 		JoyClick.pressed = true
 		Input.parse_input_event(JoyClick)
-	
+
 	dir.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	dir.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-		
+
 	if abs(dir.x) == 1 and abs(dir.y) == 1:
 		dir = dir.normalized()
-		
-	
+
+
 	movement = SPEED * dir * delta
 	if (movement):
 		get_viewport().warp_mouse(get_viewport().get_mouse_position() + movement)
