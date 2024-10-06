@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://bcx7lmtocd5wq"]
+
+[ext_resource type="Script" path="res://objects/bubble.gd" id="1_ugqud"]
+[ext_resource type="Texture2D" uid="uid://bpegwltwmklog" path="res://assets/overworld/speechbubble.png" id="2_mvf3s"]
+[ext_resource type="Texture2D" uid="uid://dqdrdxgu8d535" path="res://assets/overworld/thinkingbubble.png" id="3_odic4"]
+[ext_resource type="Texture2D" uid="uid://b50lsctrtbsj1" path="res://assets/overworld/beef.png" id="4_gvq2f"]
+[ext_resource type="Texture2D" uid="uid://ca86y351wgl27" path="res://assets/overworld/cooking.png" id="5_fp5bw"]
+[ext_resource type="Texture2D" uid="uid://cwciimbdtqbpp" path="res://assets/overworld/fire.png" id="6_no1r1"]
+[ext_resource type="Texture2D" uid="uid://mkomxmqw5x8l" path="res://assets/overworld/fishing.png" id="7_7of8g"]
+[ext_resource type="Texture2D" uid="uid://k5ikgca38iuf" path="res://assets/overworld/sickle.png" id="8_jali1"]
+[ext_resource type="Texture2D" uid="uid://bmo6yuyu3j67u" path="res://assets/overworld/hunger.png" id="9_e5hil"]
+[ext_resource type="Texture2D" uid="uid://thl3d2v1mmjt" path="res://assets/overworld/light.png" id="10_8rvcg"]
+[ext_resource type="Texture2D" uid="uid://da34dnoagsuog" path="res://assets/overworld/power.png" id="11_m1b6g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_310v8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mvf3s")
+}],
+"loop": true,
+"name": &"speaking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_odic4")
+}],
+"loop": true,
+"name": &"thinking",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pddk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gvq2f")
+}],
+"loop": true,
+"name": &"beefing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fp5bw")
+}],
+"loop": true,
+"name": &"cooking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_no1r1")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7of8g")
+}],
+"loop": true,
+"name": &"fishing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jali1")
+}],
+"loop": true,
+"name": &"harvesting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_e5hil")
+}],
+"loop": true,
+"name": &"hunger",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8rvcg")
+}],
+"loop": true,
+"name": &"light",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_m1b6g")
+}],
+"loop": true,
+"name": &"power",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ugqud")
+
+[node name="Bubble" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_310v8")
+animation = &"speaking"
+
+[node name="Action" type="AnimatedSprite2D" parent="Bubble"]
+position = Vector2(-40, 0)
+scale = Vector2(0.44452, 0.44452)
+sprite_frames = SubResource("SpriteFrames_6pddk")
+animation = &"power"

@@ -145,28 +145,19 @@ func gender_reassignment_surgery():
 			girl_skin.show()
 
 func turn_animation(angle: float, sprite: AnimatedSprite2D):
-	print(angle)
 	if angle > -PI/8 and angle < PI/8:
 		sprite.play("walk_r")
-		print("playing walk_r")
 	elif angle >= PI/8 and angle < 3*PI/8:
 		sprite.play("walk_br")
-		print("playing walk_br")
 	elif angle >= 3*PI/8 and angle < 5*PI/8:
 		sprite.play("walk_b")
-		print("playing walk_b")
 	elif angle >= 5*PI/8 and angle < 7*PI/8:
 		sprite.play("walk_bl")
-		print("playing walk_bl")
 	elif angle <= -PI/8 and angle > -3*PI/8:
 		sprite.play("walk_tr")
-		print("playing walk_tr")
 	elif angle <= -3*PI/8 and angle > -5*PI/8:
 		sprite.play("walk_t")
-		print("playing walk_t")
 	elif angle <= -5*PI/8 and angle > -7*PI/8:
 		sprite.play("walk_tl")
-		print("playing walk_tl")
-	elif angle >= 7*PI/8 and angle <= -7*PI/8:
+	elif angle >= 7*PI/8 or angle <= -7*PI/8:
 		sprite.play("walk_l")
-		print("playing walk_l")
