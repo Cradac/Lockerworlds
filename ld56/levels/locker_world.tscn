@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqcap60ldkpui"]
 
-[ext_resource type="PackedScene" uid="uid://gqlwi0c6wmwx" path="res://objects/locker.tscn" id="1_50qx8"]
+[ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
 [ext_resource type="Script" path="res://levels/locker_world.gd" id="1_wp8fv"]
-[ext_resource type="PackedScene" path="res://objects/post_it_note.tscn" id="2_k3frs"]
-[ext_resource type="PackedScene" path="res://objects/Overlay.tscn" id="4_tfxhx"]
+[ext_resource type="PackedScene" uid="uid://ujqb4sr73qsu" path="res://objects/post_it_note.tscn" id="2_k3frs"]
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="4_tfxhx"]
 
 [node name="LockerWorld" type="Node2D"]
 script = ExtResource("1_wp8fv")
@@ -105,6 +105,8 @@ position = Vector2(959, 537)
 ignore_rotation = false
 position_smoothing_speed = 4.0
 
+[connection signal="input_event" from="PostIts/PostItNote" to="." method="_on_post_it_note_input_event" binds= [0]]
+[connection signal="input_event" from="PostIts/PostItNote2" to="." method="_on_post_it_note_input_event" binds= [1]]
 [connection signal="input_event" from="Lockers/Locker1" to="." method="_on_locker_input_event" binds= [0]]
 [connection signal="input_event" from="Lockers/Locker2" to="." method="_on_locker_input_event" binds= [1]]
 [connection signal="input_event" from="Lockers/Locker3" to="." method="_on_locker_input_event" binds= [2]]

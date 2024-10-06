@@ -15,7 +15,7 @@ var locker_ids = []
 func _ready() -> void:
 	assign_locker_ids()
 	select_action_lockers()
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,13 +53,29 @@ func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, i
 		var evt = event as InputEventMouseButton
 		var tween = get_tree().create_tween().set_parallel(true)
 		if evt.button_index == 1 and evt.pressed:
+			print(evt)
 			if $Camera2D.zoom == Vector2(1,1):
-				$Camera2D.global_transform = lockers[index].get_child(0).global_transform
+				tween.tween_property($Camera2D,"global_transform",lockers[index].get_child(0).global_transform,1)
 				tween.tween_property($Camera2D,"zoom",Vector2(6,6),1)
-				#$Camera2D.zoom =  $Camera2D.zoom.lerp(Vector2(6,6),0.6)
 			else:
-				$Camera2D.zoom 
-				#$Camera2D.zoom = Vector2(1,1)
 				tween.tween_property($Camera2D,"zoom",Vector2(1,1),1)
 				tween.tween_property($Camera2D,"global_transform",camera_pos,1)
-				#$Camera2D.global_transform = camera_pos
+
+
+	
+
+
+
+
+
+func _on_post_it_note_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:
+	if event is InputEventMouseButton:
+		var evt = event as InputEventMouseButton
+		var tween = get_tree().create_tween().set_parallel(true)
+		if evt.button_index == 1 and evt.pressed:
+			if $Camera2D.zoom == Vector2(1,1):
+				tween.tween_property($Camera2D,"global_transform",post_its[index].get_child(0).global_transform,1)
+				tween.tween_property($Camera2D,"zoom",Vector2(9,9),1)
+			else:
+				tween.tween_property($Camera2D,"zoom",Vector2(1,1),1)
+				tween.tween_property($Camera2D,"global_transform",camera_pos,1)
