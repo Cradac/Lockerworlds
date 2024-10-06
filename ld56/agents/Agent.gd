@@ -3,6 +3,16 @@ class_name Agent extends CharacterBody2D
 @onready var debug = $DebugLable
 @onready var timer: Timer = $Timer
 
+enum GENDER {
+	Purple,
+	Girl,
+	Boy
+}
+@export var gender: GENDER
+@onready var purple_skin = $Purple
+@onready var boy_skin = $Boy
+@onready var girl_skin = $Girl
+
 @export
 var movement_speed: float = 100.0
 
@@ -11,14 +21,18 @@ var movement_target_position: Vector2 = Vector2(randi_range(20,1100), randi_rang
 var nav_agent_type = preload("res://agents/AgentNav.tscn")
 @onready var navigation_agent: NavigationAgent2D
 
+
+
 @onready
 var poi_array: Array[PointOfInterest] = get_parent().poi
 var target_poi: PointOfInterest
+
 	
 func _ready():
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
 	create_nav_agent()
+	gender_reassignment_surgery()
 
 	# Make sure to not await during _ready.
 	actor_setup.call_deferred()
@@ -52,17 +66,28 @@ func _physics_process(delta):
 	
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-
+	
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	navigation_agent.velocity = velocity
 	
 
 func _on_velocity_computed(safe_velocity: Vector2):
 	velocity = safe_velocity
+	var sprite = null
+	match self.gender:
+		GENDER.Purple:
+			sprite = purple_skin
+		GENDER.Boy:
+			sprite = boy_skin
+		GENDER.Girl:
+			sprite = girl_skin
+	if velocity.length_squared() <= 50:
+		sprite.play("idle")
+	else:
+		turn_animation(velocity.angle(), sprite)
 	move_and_slide()
 
 func _on_target_reached() -> void:
-	
 	if target_poi:
 		# Trigger PoI Action
 		var possible_actions: Array = target_poi.possible_actions.get(target_poi.poi_type) as Array
@@ -104,5 +129,37 @@ func alert_to_risk(risk: Risk) -> void:
 		var new_target = Vector2(randi_range(20,1100), randi_range(20,600))
 		
 		set_movement_target(new_target)
-	
-	
+
+func gender_reassignment_surgery():
+	self.gender = self.GENDER.values().pick_random()
+	match self.gender:
+		GENDER.Purple:
+			purple_skin.show()
+			boy_skin.hide()
+			girl_skin.hide()
+		GENDER.Boy:
+			purple_skin.hide()
+			boy_skin.show()
+			girl_skin.hide()
+		GENDER.Girl:
+			purple_skin.hide()
+			boy_skin.hide()
+			girl_skin.show()
+
+func turn_animation(angle: float, sprite: AnimatedSprite2D):
+	if angle >= 15*PI/8 or angle < PI/8:
+		sprite.play("walk_r")
+	elif angle >= PI/8 or angle < 3*PI/8:
+		sprite.play("walk_tr")
+	elif angle >= 3*PI/8 or angle < 5*PI/8:
+		sprite.play("walk_t")
+	elif angle >= 5*PI/8 or angle < 7*PI/8:
+		sprite.play("walk_tl")
+	elif angle >= 7*PI/8 or angle < 9*PI/8:
+		sprite.play("walk_l")
+	elif angle >= 9*PI/8 or angle < 11*PI/8:
+		sprite.play("walk_bl")
+	elif angle >= 11*PI/8 or angle < 13*PI/8:
+		sprite.play("walk_b")
+	elif angle >= 13*PI/8 or angle < 15*PI/8:
+		sprite.play("walk_br")

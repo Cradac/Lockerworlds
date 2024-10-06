@@ -709,17 +709,15 @@ autoplay = "idle"
 [node name="Girl" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_4a7ob")
-animation = &"idle"
+animation = &"walk_tr"
 autoplay = "idle"
-frame_progress = 0.0872144
 
 [node name="Boy" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bnhd0")
-animation = &"idle"
+animation = &"walk_tl"
 autoplay = "idle"
 
 [node name="Icon" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(2.08616e-07, 7.15256e-07)
 scale = Vector2(0.15625, 0.234375)
 texture = ExtResource("2_564jb")
