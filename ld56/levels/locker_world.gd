@@ -50,7 +50,7 @@ func select_action_lockers():
 func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:
 	if event is InputEventMouseButton:
 		var evt = event as InputEventMouseButton
-		var tween = get_tree().create_tween()
+		var tween = get_tree().create_tween().set_parallel(true)
 		if evt.button_index == 1 and evt.pressed:
 			if $Camera2D.zoom == Vector2(1,1):
 				$Camera2D.global_transform = lockers[index].get_child(0).global_transform
@@ -60,5 +60,5 @@ func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, i
 				$Camera2D.zoom 
 				#$Camera2D.zoom = Vector2(1,1)
 				tween.tween_property($Camera2D,"zoom",Vector2(1,1),1)
-				#tween.tween_property($Camera2D,"global_transform",camera_pos,1)
-				$Camera2D.global_transform = camera_pos
+				tween.tween_property($Camera2D,"global_transform",camera_pos,1)
+				#$Camera2D.global_transform = camera_pos
