@@ -104,12 +104,12 @@ script = ExtResource("1_ugqud")
 [node name="Bubble" type="AnimatedSprite2D" parent="."]
 position = Vector2(24, 24)
 sprite_frames = SubResource("SpriteFrames_310v8")
-animation = &"thinking"
+animation = &"speaking"
 speed_scale = 0.0
 
 [node name="Action" type="AnimatedSprite2D" parent="Bubble"]
-position = Vector2(-27, -7)
-scale = Vector2(0.55, 0.55)
+position = Vector2(-64, 17)
+scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_6pddk")
 animation = &"beefing"
 speed_scale = 0.0

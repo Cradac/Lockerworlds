@@ -748,7 +748,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Bubble" parent="." instance=ExtResource("4_almn8")]
-position = Vector2(-12, -26)
+position = Vector2(-31, -36)
 scale = Vector2(0.1, 0.1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
