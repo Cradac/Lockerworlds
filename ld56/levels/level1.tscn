@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct52q30qc7d2k"]
+
+[ext_resource type="PackedScene" uid="uid://ehvpmuops7cv" path="res://objects/iso-tilemap.tscn" id="1_o8ke7"]
+[ext_resource type="Texture2D" uid="uid://btt8gf2mxgva8" path="res://assets/overworld/locker2_open.png" id="2_gq4sm"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="layer0" parent="." instance=ExtResource("1_o8ke7")]
+y_sort_enabled = true
+
+[node name="layer1" parent="." instance=ExtResource("1_o8ke7")]
+z_index = 1
+y_sort_enabled = true
+y_sort_origin = 1
+
+[node name="layer2" parent="." instance=ExtResource("1_o8ke7")]
+z_index = 2
+y_sort_enabled = true
+y_sort_origin = 2
+
+[node name="layer3" parent="." instance=ExtResource("1_o8ke7")]
+z_index = 3
+y_sort_enabled = true
+y_sort_origin = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_gq4sm")

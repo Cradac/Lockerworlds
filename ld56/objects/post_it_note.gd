@@ -3,7 +3,7 @@ extends Node2D
 @onready var label = $PostItNote/Label
 var assigned_locker = null
 
-var TEXT = "the code for locker [i]%s[/i] is: [b]%s[/b]"
+var TEXT = "the code for locker %s is: %s"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
