@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6g7prtc2v6jh"
-path="res://.godot/imported/pointything.png-48d6b0b633d2df2ff2a0124760ae8931.ctex"
+uid="uid://da34dnoagsuog"
+path="res://.godot/imported/power.png-08aecc5252c10e6d16e029d34876aa5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pointything.png"
-dest_files=["res://.godot/imported/pointything.png-48d6b0b633d2df2ff2a0124760ae8931.ctex"]
+source_file="res://assets/overworld/power.png"
+dest_files=["res://.godot/imported/power.png-08aecc5252c10e6d16e029d34876aa5c.ctex"]
 
 [params]
 
