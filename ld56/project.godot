@@ -26,10 +26,6 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
-[editor]
-
-movie_writer/movie_file="C:/Dev/ldjam/ldjam56/demo.avi"
-
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
