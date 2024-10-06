@@ -2,6 +2,6 @@ class_name FishAction extends AgentAction
 
 func _init() -> void:
 	time_spent = 30
-	emoji = "🐟"
+	emoji = "fishing"
 	
 	possible_risks = [DrownRisk.new()]

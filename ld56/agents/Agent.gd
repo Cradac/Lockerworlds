@@ -12,6 +12,7 @@ enum GENDER {
 @onready var purple_skin = $Purple
 @onready var boy_skin = $Boy
 @onready var girl_skin = $Girl
+@onready var bubble: Bubble = $Bubble;
 
 @export
 var movement_speed: float = 100.0
@@ -50,6 +51,7 @@ func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
 	await get_tree().physics_frame
 
+	bubble.hide()
 	# Now that the navigation map is no longer empty, set the movement target.
 	set_movement_target(get_random_pos())
 
@@ -91,7 +93,10 @@ func _on_target_reached() -> void:
 		var action: AgentAction = action_class.new() as AgentAction
 
 		var timeout: int = action.do_action_at(target_poi)
-		debug.text = action.emoji
+		bubble.set_action_type(action.emoji)
+		bubble.set_bubble_type("thinking")
+		bubble.show()
+		#debug.text = action.emoji
 		timer.start(timeout)
 		return
 	else:
@@ -107,6 +112,7 @@ func set_new_target():
 		set_movement_target(get_random_pos())
 	else:
 		debug.text = ""
+		bubble.hide()
 		set_movement_target(target_poi.position)
 
 func _on_timer_timeout() -> void:
@@ -116,7 +122,10 @@ func alert_to_risk(risk: Risk) -> void:
 	var distance = self.position.distance_to(risk.position)
 	#print("Got alerted to risk with distance "+str(distance))
 	if distance < risk.alert_range:
-		debug.text = risk.emoji
+		#debug.text = risk.emoji
+		bubble.set_action_type(risk.emoji)
+		bubble.set_bubble_type("speaking")
+		bubble.show()
 		timer.stop()
 
 		navigation_agent.queue_free()

@@ -2,7 +2,7 @@ class_name FireRisk extends Risk
 
 func _init() -> void:
 	morale_damage_per_second = 10
-	emoji = "🔥"
+	emoji = "fire"
 	chance = 0.3
 	alert_range = 450
 	

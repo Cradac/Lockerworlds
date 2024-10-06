@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://lyxusyca41vh"]
+[gd_scene load_steps=14 format=3 uid="uid://gqlwi0c6wmwx"]
 
 [ext_resource type="Script" path="res://objects/locker.gd" id="1_tpqgi"]
 [ext_resource type="Texture2D" uid="uid://cb3pobuf3l2mq" path="res://assets/overworld/Locker2.png" id="2_vjgc3"]

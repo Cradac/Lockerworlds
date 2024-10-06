@@ -1,8 +1,9 @@
-[gd_scene load_steps=86 format=3 uid="uid://g43225g3k6pa"]
+[gd_scene load_steps=87 format=3 uid="uid://g43225g3k6pa"]
 
 [ext_resource type="Script" path="res://agents/Agent.gd" id="1_gdgd0"]
 [ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="2_564jb"]
 [ext_resource type="Texture2D" uid="uid://cyxaxb4i7y2yh" path="res://assets/8d-characters/Small-8-Direction-Characters_by_AxulArt.png" id="2_5300a"]
+[ext_resource type="PackedScene" uid="uid://dc2ok2vm83t5l" path="res://objects/bubble.tscn" id="4_almn8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3o1r"]
 atlas = ExtResource("2_5300a")
@@ -745,5 +746,9 @@ offset_bottom = -1.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="Bubble" parent="." instance=ExtResource("4_almn8")]
+position = Vector2(-12, -26)
+scale = Vector2(0.1, 0.1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
