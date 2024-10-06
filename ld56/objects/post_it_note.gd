@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var label = $Label
+@onready var label = $PostItNote/Label
 var assigned_locker = null
 
 var TEXT = "the code for locker [i]%s[/i] is: [b]%s[/b]"

@@ -105,6 +105,8 @@ position = Vector2(959, 537)
 ignore_rotation = false
 position_smoothing_speed = 4.0
 
+[connection signal="input_event" from="PostIts/PostItNote" to="." method="_on_post_it_note_input_event" binds= [0]]
+[connection signal="input_event" from="PostIts/PostItNote2" to="." method="_on_post_it_note_input_event" binds= [1]]
 [connection signal="input_event" from="Lockers/Locker1" to="." method="_on_locker_input_event" binds= [0]]
 [connection signal="input_event" from="Lockers/Locker2" to="." method="_on_locker_input_event" binds= [1]]
 [connection signal="input_event" from="Lockers/Locker3" to="." method="_on_locker_input_event" binds= [2]]
