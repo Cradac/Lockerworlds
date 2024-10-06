@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ujqb4sr73qsu"]
+
+[ext_resource type="Script" path="res://objects/post_it_note.gd" id="1_30ojs"]
+[ext_resource type="Texture2D" uid="uid://b85wfb15vvv15" path="res://assets/overworld/postit.png" id="2_3ien3"]
+
+[node name="PostItNote" type="Node2D"]
+position = Vector2(32, 32)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_30ojs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3ien3")
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = -72.0
+offset_top = -88.0
+offset_right = 68.0
+offset_bottom = 92.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "\"the code for locker [i]%s[/i] is: [b]%s[/b]\""
+scroll_active = false

@@ -18,10 +18,7 @@ func _ready() -> void:
 	reset_lock_position()
 	print("LOCK POSITION:")
 	print(LOCK_POSITION)
-	label.text=center_text(LOCKER_ID)
 	set_lock()
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,6 +36,7 @@ func generate_code():
 		LOCK_CODE[i-1] = rng.randi_range(0,9)
 
 func reset_lock_position():
+	lock.set_frame_and_progress(0,0)
 	var rng = RandomNumberGenerator.new()
 	while true:
 		for i in range(4):
@@ -68,6 +66,7 @@ func center_text(text):
 func check_code():
 	if LOCK_CODE == LOCK_POSITION:
 		print("richtig")
+		lock.set_frame_and_progress(1,0)
 		#TODO hier szene öffnen
 		
 func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
@@ -80,3 +79,7 @@ func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 				LOCK_POSITION[index] = LOCK_POSITION[index] + 1 % 10
 			set_lock()
 			check_code()
+
+func set_locker_id():
+	label.text=center_text(LOCKER_ID)
+	
