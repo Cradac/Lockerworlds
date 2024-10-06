@@ -4,7 +4,7 @@ var moral_damage: int = 0
 var current_dps: int = 0
 
 @onready var agents: AgentHandler = $AgentHandler
-@onready var tileMap: TileMapLayer = $TileMapLayer
+@onready var tileMap: TileMapLayer = $layer1
 @onready var debug: Label = $Label
 
 @onready var timer: Timer = $Timer
@@ -20,9 +20,9 @@ func _ready() -> void:
 	var cellPositions: Array[Vector2i] = tileMap.get_used_cells()
 	for position in cellPositions:
 		var tileData: TileData = tileMap.get_cell_tile_data(position)
-		var customData = tileData.get_custom_data("poi_type")
+		var customData: String = tileData.get_custom_data("poi_type") as String
 
-		if customData != null:
+		if customData != null and not customData.is_empty():
 			var global_pos = tileMap.get_parent().to_global(tileMap.map_to_local(position))
 			poi_array.append(PointOfInterest.new(customData, global_pos, self))
 
@@ -58,5 +58,12 @@ func remove_moral_dps(morale_dps: int) -> void:
 	current_dps = max(current_dps-morale_dps, 0)
 
 func _on_second_timeout() -> void:
-	moral_damage += current_dps
+	#moral_damage += current_dps
 	debug.text = "Total: "+ str(moral_damage) + " DPS: "+str(current_dps)
+
+
+func _on_button_pressed() -> void:
+	Simulation.switch_to_locker()
+
+func set_rendered(rendered: bool) -> void:
+	self.rendered = rendered

@@ -3,3 +3,4 @@
 [node name="AgentNav" type="NavigationAgent2D"]
 avoidance_enabled = true
 radius = 20.0
+debug_enabled = true

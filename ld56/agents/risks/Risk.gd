@@ -42,7 +42,8 @@ func _on_timeout() -> void:
 	alert_agents()
 	
 func alert_agents() -> void:
-	get_tree().call_group("agents", "alert_to_risk", self)
+	if poi.world.rendered:
+		get_tree().call_group("agents", "alert_to_risk", self)
 	
 func _on_visual_input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:

@@ -16,7 +16,7 @@ enum GENDER {
 @export
 var movement_speed: float = 100.0
 
-var movement_target_position: Vector2 = Vector2(randi_range(20,1100), randi_range(20,600))
+var movement_target_position: Vector2
 
 var nav_agent_type = preload("res://agents/AgentNav.tscn")
 @onready var navigation_agent: NavigationAgent2D
@@ -51,7 +51,7 @@ func actor_setup():
 	await get_tree().physics_frame
 
 	# Now that the navigation map is no longer empty, set the movement target.
-	set_movement_target(movement_target_position)
+	set_movement_target(get_random_pos())
 
 func set_movement_target(movement_target: Vector2):
 	#debug.text = str(movement_target.x) + "," + str(movement_target.y)
@@ -125,7 +125,7 @@ func alert_to_risk(risk: Risk) -> void:
 		set_movement_target(get_random_pos())
 
 func get_random_pos() -> Vector2:
-	return Vector2(randi_range(20,1900), randi_range(20,1000))
+	return Vector2(randi_range(510,1370), randi_range(160,960))
 
 
 func gender_reassignment_surgery():
