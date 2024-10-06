@@ -21,7 +21,7 @@ enum POI_TYPE {
 
 var possible_actions: Dictionary = {
 	POI_TYPE.CAMPFIRE: [CookAction, ChillAction],
-	POI_TYPE.RIVER: [ChillAction]
+	POI_TYPE.RIVER: [ChillAction, FishAction]
 }
 
 func set_disabled(disabled: bool):

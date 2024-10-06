@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://2cgab3cvpjma"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://db0dcwvwu0fd3"]
 
 [ext_resource type="Texture2D" uid="uid://c8xsew0jgvhgx" path="res://assets/Prototyping-64x64/prototyping_tilesheet_published.png" id="1_o12yl"]
 
@@ -141,6 +141,7 @@ texture_region_size = Vector2i(64, 64)
 1:14/0/texture_origin = Vector2i(0, -16)
 2:14/0 = 0
 2:14/0/texture_origin = Vector2i(0, -16)
+2:14/0/custom_data_0 = "river"
 3:14/0 = 0
 3:14/0/texture_origin = Vector2i(0, -16)
 0:15/0 = 0
