@@ -26,7 +26,7 @@ var nav_agent_type = preload("res://agents/AgentNav.tscn")
 var world: World
 var target_poi: PointOfInterest
 
-	
+
 func _ready():
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
@@ -36,7 +36,7 @@ func _ready():
 	world = get_parent().world
 	# Make sure to not await during _ready.
 	actor_setup.call_deferred()
-	
+
 func create_nav_agent() -> void:
 	var agent: NavigationAgent2D = nav_agent_type.instantiate()
 	add_child(agent)
@@ -44,7 +44,7 @@ func create_nav_agent() -> void:
 	agent.target_reached.connect(_on_target_reached)
 	agent.velocity_computed.connect(_on_velocity_computed)
 	navigation_agent = agent
-	
+
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
@@ -59,13 +59,13 @@ func set_movement_target(movement_target: Vector2):
 	navigation_agent.get_next_path_position()
 
 func _physics_process(delta):
-	
+
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-	
+
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	navigation_agent.velocity = velocity
-	
+
 
 func _on_velocity_computed(safe_velocity: Vector2):
 	velocity = safe_velocity
@@ -89,14 +89,14 @@ func _on_target_reached() -> void:
 		var possible_actions: Array = target_poi.possible_actions.get(target_poi.poi_type) as Array
 		var action_class = possible_actions.pick_random()
 		var action: AgentAction = action_class.new() as AgentAction
-		
+
 		var timeout: int = action.do_action_at(target_poi)
 		debug.text = action.emoji
 		timer.start(timeout)
 		return
 	else:
 		set_new_target()
-		
+
 
 func set_new_target():
 	navigation_agent.queue_free()
@@ -111,21 +111,21 @@ func set_new_target():
 
 func _on_timer_timeout() -> void:
 	set_new_target()
-	
+
 func alert_to_risk(risk: Risk) -> void:
 	var distance = self.position.distance_to(risk.position)
 	#print("Got alerted to risk with distance "+str(distance))
 	if distance < risk.alert_range:
 		debug.text = risk.emoji
 		timer.stop()
-		
+
 		navigation_agent.queue_free()
 		create_nav_agent()
-		target_poi = null		
+		target_poi = null
 		set_movement_target(get_random_pos())
-	
+
 func get_random_pos() -> Vector2:
-	return Vector2(randi_range(20,1100), randi_range(20,600))
+	return Vector2(randi_range(20,1900), randi_range(20,1000))
 
 
 func gender_reassignment_surgery():

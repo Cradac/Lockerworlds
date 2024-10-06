@@ -15,12 +15,20 @@ run/main_scene="res://levels/locker_world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Simulation="*res://Simulation.gd"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor]
+
+movie_writer/movie_file="C:/Dev/ldjam/ldjam56/demo.avi"
 
 [gui]
 
