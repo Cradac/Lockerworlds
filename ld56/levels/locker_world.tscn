@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqcap60ldkpui"]
+[gd_scene load_steps=8 format=3 uid="uid://dqcap60ldkpui"]
 
 [ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
 [ext_resource type="Script" path="res://levels/locker_world.gd" id="1_wp8fv"]
 [ext_resource type="Texture2D" uid="uid://cfwgjhfsproaq" path="res://assets/overworld/background.jpeg" id="2_0lf0h"]
 [ext_resource type="PackedScene" uid="uid://ujqb4sr73qsu" path="res://objects/post_it_note.tscn" id="2_k3frs"]
 [ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="4_tfxhx"]
+[ext_resource type="AudioStream" uid="uid://dhs7jg28c0eii" path="res://sounds/lockerworld_music.wav" id="6_gybxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynkao"]
 size = Vector2(1934, 1085)
@@ -119,6 +120,10 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(957, 532.5)
 shape = SubResource("RectangleShape2D_ynkao")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gybxx")
+autoplay = true
 
 [connection signal="input_event" from="PostIts/PostItNote" to="." method="_on_post_it_note_input_event" binds= [0]]
 [connection signal="input_event" from="PostIts/PostItNote2" to="." method="_on_post_it_note_input_event" binds= [1]]
