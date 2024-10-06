@@ -15,6 +15,7 @@ var locker_ids = []
 func _ready() -> void:
 	assign_locker_ids()
 	select_action_lockers()
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
