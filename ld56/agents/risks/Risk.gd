@@ -5,26 +5,46 @@ var emoji: String = "⚠️"
 var chance: float = 0.05
 
 var alert_range: int = 300
+var poi: PointOfInterest
 
-@onready var timer: Timer = $Timer
+var visual_scene = load("res://agents/risks/Risk.tscn")
+var visuals: Area2D
+
 
 func _ready() -> void:
 	pass
 
-func trigger(position: Vector2i, action_time: int) -> void:
+func trigger(poi: PointOfInterest, action_time: int) -> void:
 	# Randomise Trigger Time for Risk
-	self.position = position
-	Engine.get_main_loop().current_scene.add_child(self)
-	timer = Timer.new()
-	get_tree().create_timer(randi_range(int(action_time*0.2), int(action_time*0.9))).timeout.connect(_on_timeout)
+	self.poi = poi
+	self.position = poi.position
+	poi.world.add_child(self)
+	poi.triggerd = true
+	
+	# This trigger function gets called immediately when agent starts action. Delay real trigger to feel better
+	var trigger_delay = randi_range(int(action_time*0.2), int(action_time*0.9))
+	get_tree().create_timer(trigger_delay).timeout.connect(_on_timeout)
 	
 func resolve() -> void:
-	timer.stop()
+	remove_child(visuals)
+	poi.set_disabled(false)
+	poi.world.remove_moral_dps(morale_damage_per_second)
+	pass
 	
 func _on_timeout() -> void:
-	timer.start(-1)
+	poi.world.add_moral_dps(morale_damage_per_second)
+	poi.set_disabled(true)
+	visuals = visual_scene.instantiate()
+
+	visuals.input_event.connect(_on_visual_input_event)
+	add_child(visuals)
+	
 	alert_agents()
 	
 func alert_agents() -> void:
 	get_tree().call_group("agents", "alert_to_risk", self)
-	pass # TODO alert and interupt close agents
+	
+func _on_visual_input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
+	if event is InputEventMouseButton:
+		resolve()
+	pass
