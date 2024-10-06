@@ -67,7 +67,12 @@ func check_code():
 	if LOCK_CODE == LOCK_POSITION:
 		print("richtig")
 		lock.set_frame_and_progress(1,0)
+		if lock.animation_finished:
+			var scene = preload("res://aitest.tscn")
+			get_tree().change_scene_to_packed(scene)
 		#TODO hier szene öffnen
+		
+		
 		
 func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 	if event is InputEventMouseButton:
