@@ -1,11 +1,17 @@
-class_name PointOfInterest extends Node
+class_name PointOfInterest extends Node2D
 
 var poi_type: POI_TYPE
-var position: Vector2i
+var tileMap: TileMapLayer
+var world: World
 
-func _init(type: String, pos: Vector2i) -> void:
+var disabled: bool = false
+var triggerd: bool = false
+
+func _init(type: String, pos: Vector2i, world: World) -> void:
 	poi_type = POI_TYPE.get(type.to_upper())
-	position = pos
+	global_position = pos
+	self.tileMap = world.tileMap
+	self.world = world
 	
 	
 
@@ -17,3 +23,12 @@ var possible_actions: Dictionary = {
 	POI_TYPE.CAMPFIRE: [CookAction, ChillAction],
 	POI_TYPE.RIVER: [ChillAction]
 }
+
+func set_disabled(disabled: bool):
+	if disabled:
+		print("Disabling PoI")
+	else:
+		triggerd = false
+		print("Enabling PoI")
+	self.disabled = disabled
+	world.update_poi_status(self)
