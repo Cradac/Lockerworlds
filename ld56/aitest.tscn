@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="1_1nqw3"]
 [ext_resource type="Script" path="res://World.gd" id="1_vlb74"]
 [ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="2_anqoi"]
-[ext_resource type="TileSet" uid="uid://db0dcwvwu0fd3" path="res://objects/tileset.tres" id="3_fj0wh"]
+[ext_resource type="TileSet" uid="uid://2cgab3cvpjma" path="res://objects/tileset.tres" id="3_fj0wh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vm37u"]
 vertices = PackedVector2Array(1917.92, 1070.04, 9.96875, 1077.95, 7.02344, 11.9766, 1910.07, 10.0078)
@@ -36,6 +36,7 @@ tile_set = ExtResource("3_fj0wh")
 
 [node name="AgentHandler" type="Node2D" parent="."]
 script = ExtResource("1_1nqw3")
+amount_spawned = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 795.0
