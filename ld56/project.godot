@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Simulation="*res://Simulation.gd"
+SettingsAndSound="*res://scripts/settings_and_sound.gd"
 
 [display]
 
