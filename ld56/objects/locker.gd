@@ -72,11 +72,13 @@ func check_code():
 func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 	if event is InputEventMouseButton:
 		var evt = event as InputEventMouseButton
-		if evt.pressed:
+		if evt.pressed && evt.button_index == 1:
 			if is_left:
-				LOCK_POSITION[index] = LOCK_POSITION[index] - 1 % 10
+				LOCK_POSITION[index] = (LOCK_POSITION[index] - 1) % 10
+				if LOCK_POSITION[index] < 0:
+					LOCK_POSITION[index] = 9
 			else:
-				LOCK_POSITION[index] = LOCK_POSITION[index] + 1 % 10
+				LOCK_POSITION[index] = (LOCK_POSITION[index] + 1) % 10
 			set_lock()
 			check_code()
 
