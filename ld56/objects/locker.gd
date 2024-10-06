@@ -4,9 +4,9 @@ extends Node2D
 @export var LOCK_POSITION = [0,0,0,0]
 @export var LOCK_CODE = [0,0,0,0]
 
-@onready var label = $Locker/Tag/Label
-@onready var lock = $Locker/Lock
-@onready var texture = $Locker_Texture
+@onready var label = $Locker/Locker/Tag/Label
+@onready var lock = $Locker/Locker/Lock
+@onready var texture = $Locker/Locker_Texture
 
 
 # Called when the node enters the scene tree for the first time.
@@ -84,4 +84,3 @@ func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 
 func set_locker_id():
 	label.text=center_text(LOCKER_ID)
-	

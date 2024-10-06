@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lyxusyca41vh"]
+[gd_scene load_steps=13 format=3 uid="uid://lyxusyca41vh"]
 
 [ext_resource type="Script" path="res://objects/locker.gd" id="1_tpqgi"]
 [ext_resource type="Texture2D" uid="uid://cb3pobuf3l2mq" path="res://assets/overworld/Locker2.png" id="2_vjgc3"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cn7l247hutxri" path="res://assets/overworld/Locker6.png" id="6_u2b24"]
 [ext_resource type="Texture2D" uid="uid://b7ctresqsnvx6" path="res://assets/overworld/lock2.png" id="7_xbq5s"]
 [ext_resource type="Texture2D" uid="uid://qadecm1tmesc" path="res://assets/overworld/lock2open.png" id="8_15ugl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdbkk"]
+size = Vector2(783, 781)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1r51t"]
 animations = [{
@@ -47,25 +50,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Locker" type="Node2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_tpqgi")
 
-[node name="Locker_Texture" type="AnimatedSprite2D" parent="."]
-position = Vector2(387, 393)
-sprite_frames = SubResource("SpriteFrames_1r51t")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(381.5, 380.5)
+shape = SubResource("RectangleShape2D_cdbkk")
 
 [node name="Locker" type="Node2D" parent="."]
 
-[node name="Lock" type="AnimatedSprite2D" parent="Locker"]
+[node name="Locker_Texture" type="AnimatedSprite2D" parent="Locker"]
+position = Vector2(387, 393)
+sprite_frames = SubResource("SpriteFrames_1r51t")
+
+[node name="Locker" type="Node2D" parent="Locker"]
+
+[node name="Lock" type="AnimatedSprite2D" parent="Locker/Locker"]
 position = Vector2(176, 315)
 scale = Vector2(0.416, 0.416)
 sprite_frames = SubResource("SpriteFrames_n21l5")
 
-[node name="0" type="Node2D" parent="Locker/Lock"]
+[node name="0" type="Node2D" parent="Locker/Locker/Lock"]
 position = Vector2(7.21155, 0)
 scale = Vector2(0.99944, 0.99944)
 
-[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/0"]
+[node name="lock_c" type="RichTextLabel" parent="Locker/Locker/Lock/0"]
 offset_left = -144.879
 offset_top = 88.1905
 offset_right = -119.879
@@ -79,7 +88,7 @@ bbcode_enabled = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/0"]
+[node name="lock_l" type="RichTextLabel" parent="Locker/Locker/Lock/0"]
 offset_left = -181.446
 offset_top = 88.1905
 offset_right = -156.446
@@ -93,7 +102,7 @@ bbcode_enabled = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/0"]
+[node name="lock_r" type="RichTextLabel" parent="Locker/Locker/Lock/0"]
 offset_left = -110.463
 offset_top = 88.1905
 offset_right = -85.4629
@@ -107,11 +116,11 @@ bbcode_enabled = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="1" type="Node2D" parent="Locker/Lock"]
+[node name="1" type="Node2D" parent="Locker/Locker/Lock"]
 position = Vector2(7.21155, 0)
 scale = Vector2(0.99944, 0.99944)
 
-[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/1"]
+[node name="lock_c" type="RichTextLabel" parent="Locker/Locker/Lock/1"]
 offset_left = -144.897
 offset_top = 169.928
 offset_right = -119.897
@@ -124,7 +133,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/1"]
+[node name="lock_l" type="RichTextLabel" parent="Locker/Locker/Lock/1"]
 offset_left = -181.446
 offset_top = 169.928
 offset_right = -156.446
@@ -137,7 +146,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/1"]
+[node name="lock_r" type="RichTextLabel" parent="Locker/Locker/Lock/1"]
 offset_left = -110.463
 offset_top = 169.928
 offset_right = -85.4629
@@ -150,11 +159,11 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="2" type="Node2D" parent="Locker/Lock"]
+[node name="2" type="Node2D" parent="Locker/Locker/Lock"]
 position = Vector2(7.21155, 0)
 scale = Vector2(0.99944, 0.99944)
 
-[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/2"]
+[node name="lock_c" type="RichTextLabel" parent="Locker/Locker/Lock/2"]
 offset_left = -144.897
 offset_top = 247.363
 offset_right = -119.897
@@ -167,7 +176,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/2"]
+[node name="lock_l" type="RichTextLabel" parent="Locker/Locker/Lock/2"]
 offset_left = -181.446
 offset_top = 247.363
 offset_right = -156.446
@@ -180,7 +189,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/2"]
+[node name="lock_r" type="RichTextLabel" parent="Locker/Locker/Lock/2"]
 offset_left = -110.463
 offset_top = 247.363
 offset_right = -85.463
@@ -193,11 +202,11 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="3" type="Node2D" parent="Locker/Lock"]
+[node name="3" type="Node2D" parent="Locker/Locker/Lock"]
 position = Vector2(7.21155, 0)
 scale = Vector2(0.99944, 0.99944)
 
-[node name="lock_c" type="RichTextLabel" parent="Locker/Lock/3"]
+[node name="lock_c" type="RichTextLabel" parent="Locker/Locker/Lock/3"]
 offset_left = -144.897
 offset_top = 324.799
 offset_right = -119.897
@@ -210,7 +219,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="lock_l" type="RichTextLabel" parent="Locker/Lock/3"]
+[node name="lock_l" type="RichTextLabel" parent="Locker/Locker/Lock/3"]
 offset_left = -179.295
 offset_top = 324.799
 offset_right = -154.295
@@ -223,7 +232,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="lock_r" type="RichTextLabel" parent="Locker/Lock/3"]
+[node name="lock_r" type="RichTextLabel" parent="Locker/Locker/Lock/3"]
 offset_left = -108.312
 offset_top = 324.799
 offset_right = -83.312
@@ -236,12 +245,12 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
 
-[node name="Tag" type="Sprite2D" parent="Locker"]
+[node name="Tag" type="Sprite2D" parent="Locker/Locker"]
 position = Vector2(383, 178)
 scale = Vector2(0.238299, 0.238299)
 texture = ExtResource("4_6xlcc")
 
-[node name="Label" type="RichTextLabel" parent="Locker/Tag"]
+[node name="Label" type="RichTextLabel" parent="Locker/Locker/Tag"]
 offset_left = -205.624
 offset_top = -134.285
 offset_right = -105.624
@@ -255,11 +264,11 @@ bbcode_enabled = true
 scroll_active = false
 tab_size = 8
 
-[connection signal="gui_input" from="Locker/Lock/0/lock_l" to="." method="_lock_clicked" binds= [true, 0]]
-[connection signal="gui_input" from="Locker/Lock/0/lock_r" to="." method="_lock_clicked" binds= [false, 0]]
-[connection signal="gui_input" from="Locker/Lock/1/lock_l" to="." method="_lock_clicked" binds= [true, 1]]
-[connection signal="gui_input" from="Locker/Lock/1/lock_r" to="." method="_lock_clicked" binds= [false, 1]]
-[connection signal="gui_input" from="Locker/Lock/2/lock_l" to="." method="_lock_clicked" binds= [true, 2]]
-[connection signal="gui_input" from="Locker/Lock/2/lock_r" to="." method="_lock_clicked" binds= [false, 2]]
-[connection signal="gui_input" from="Locker/Lock/3/lock_l" to="." method="_lock_clicked" binds= [true, 3]]
-[connection signal="gui_input" from="Locker/Lock/3/lock_r" to="." method="_lock_clicked" binds= [false, 3]]
+[connection signal="gui_input" from="Locker/Locker/Lock/0/lock_l" to="." method="_lock_clicked" binds= [true, 0]]
+[connection signal="gui_input" from="Locker/Locker/Lock/0/lock_r" to="." method="_lock_clicked" binds= [false, 0]]
+[connection signal="gui_input" from="Locker/Locker/Lock/1/lock_l" to="." method="_lock_clicked" binds= [true, 1]]
+[connection signal="gui_input" from="Locker/Locker/Lock/1/lock_r" to="." method="_lock_clicked" binds= [false, 1]]
+[connection signal="gui_input" from="Locker/Locker/Lock/2/lock_l" to="." method="_lock_clicked" binds= [true, 2]]
+[connection signal="gui_input" from="Locker/Locker/Lock/2/lock_r" to="." method="_lock_clicked" binds= [false, 2]]
+[connection signal="gui_input" from="Locker/Locker/Lock/3/lock_l" to="." method="_lock_clicked" binds= [true, 3]]
+[connection signal="gui_input" from="Locker/Locker/Lock/3/lock_r" to="." method="_lock_clicked" binds= [false, 3]]

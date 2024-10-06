@@ -3,9 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
 [ext_resource type="Script" path="res://levels/locker_world.gd" id="1_ngxh0"]
 [ext_resource type="PackedScene" uid="uid://ujqb4sr73qsu" path="res://objects/post_it_note.tscn" id="2_k3frs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_da26k"]
-size = Vector2(751.695, 757.605)
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overtlay.tscn" id="4_tfxhx"]
 
 [node name="LockerWorld" type="Node2D"]
 script = ExtResource("1_ngxh0")
@@ -27,12 +25,10 @@ scale = Vector2(0.253785, 0.253785)
 [node name="Locker2" parent="Lockers" instance=ExtResource("1_50qx8")]
 position = Vector2(432, 128)
 scale = Vector2(0.253785, 0.253785)
-LOCKER_ID = 102
 
 [node name="Locker3" parent="Lockers" instance=ExtResource("1_50qx8")]
 position = Vector2(720, 128)
 scale = Vector2(0.253785, 0.253785)
-LOCKER_ID = 103
 
 [node name="Locker4" parent="Lockers" instance=ExtResource("1_50qx8")]
 position = Vector2(1008, 128)
@@ -94,14 +90,10 @@ scale = Vector2(0.253785, 0.253785)
 position = Vector2(1584, 768)
 scale = Vector2(0.253785, 0.253785)
 
-[node name="Locker#Area2D" type="Area2D" parent="."]
-
-[node name="Locker_Area2D#CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(388.579, 393.504)
-shape = SubResource("RectangleShape2D_da26k")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(959, 537)
 ignore_rotation = false
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="Overtlay" parent="." instance=ExtResource("4_tfxhx")]
