@@ -5,12 +5,14 @@ extends Control
 func _ready() -> void:
 	$music_slider.value = SettingsAndSound.music_volume
 	$sound_slider.value = SettingsAndSound.sound_volume
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("settings"):
+		pass
 
 
 func _on_sound_slider_changed() -> void:
