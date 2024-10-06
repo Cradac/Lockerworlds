@@ -3,6 +3,8 @@ extends Node2D
 var WORLD_1_LOCKER = null
 var WORLD_2_LOCKER = null
 
+var locker_ids = []
+
 @onready var lockers = self.get_node("Lockers").get_children()
 @onready var post_its = self.get_node("PostIts").get_children()
 
@@ -20,9 +22,16 @@ func assign_locker_ids():
 	var rng = RandomNumberGenerator.new()
 	for locker in lockers:
 		rng.randomize()
-		locker.LOCKER_ID = rng.randi_range(100,999)
-		print(locker.LOCKER_ID)
-		locker.set_locker_id()
+		var locker_id = 0
+		while true:
+			locker_id = rng.randi_range(100,999)
+			if locker_id not in locker_ids:
+				locker_ids.append(locker_id)
+				print(locker_id)
+				break
+		locker.LOCKER_ID = locker_id
+		locker.set_id_label()
+
 
 func select_action_lockers():
 	WORLD_1_LOCKER = lockers.pick_random()
