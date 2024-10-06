@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqcap60ldkpui"]
 
-[ext_resource type="PackedScene" uid="uid://gqlwi0c6wmwx" path="res://objects/locker.tscn" id="1_50qx8"]
+[ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
 [ext_resource type="Script" path="res://levels/locker_world.gd" id="1_wp8fv"]
-[ext_resource type="PackedScene" path="res://objects/post_it_note.tscn" id="2_k3frs"]
-[ext_resource type="PackedScene" uid="uid://3atmfy00y0i8" path="res://objects/Overtlay.tscn" id="4_tfxhx"]
+[ext_resource type="PackedScene" uid="uid://ujqb4sr73qsu" path="res://objects/post_it_note.tscn" id="2_k3frs"]
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="4_tfxhx"]
 
 [node name="LockerWorld" type="Node2D"]
 script = ExtResource("1_wp8fv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Overtlay" parent="CanvasLayer" instance=ExtResource("4_tfxhx")]
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource("4_tfxhx")]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
