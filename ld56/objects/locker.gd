@@ -1,4 +1,4 @@
-extends Node2D
+class_name Locker extends Node2D
 
 @export var LOCKER_ID:int = 101
 @export var LOCK_POSITION = [0,0,0,0]
@@ -8,6 +8,7 @@ extends Node2D
 @onready var lock = $Locker/Locker/Lock
 @onready var texture = $Locker/Locker_Texture
 
+signal locker_opened
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func random_locker_texture():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -62,18 +63,16 @@ func set_lock():
 func center_text(text):
 	text = "[center]%s[/center]" % text
 	return text
-	
+
 func check_code():
 	if LOCK_CODE == LOCK_POSITION:
 		print("richtig")
 		lock.set_frame_and_progress(1,0)
 		if lock.animation_finished:
-			var scene = preload("res://aitest.tscn")
-			get_tree().change_scene_to_packed(scene)
-		#TODO hier szene öffnen
-		
-		
-		
+			locker_opened.emit()
+
+
+
 func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 	if event is InputEventMouseButton:
 		var evt = event as InputEventMouseButton
