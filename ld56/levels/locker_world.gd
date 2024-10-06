@@ -1,7 +1,7 @@
 extends Node2D
 
-var WORLD_1_LOCKER = null
-var WORLD_2_LOCKER = null
+var WORLD_1_LOCKER: Locker = null
+var WORLD_2_LOCKER: Locker = null
 
 var locker_ids = []
 
@@ -40,12 +40,19 @@ func assign_locker_ids():
 func select_action_lockers():
 	WORLD_1_LOCKER = lockers.pick_random()
 	post_its[0].assign_locker(WORLD_1_LOCKER)
+	WORLD_1_LOCKER.locker_opened.connect(_on_locker_1_open);
 	print(WORLD_1_LOCKER.name)
-	
+
 	WORLD_2_LOCKER = lockers.pick_random()
 	post_its[1].assign_locker(WORLD_2_LOCKER)
+	WORLD_2_LOCKER.locker_opened.connect(_on_locker_2_open);
 	print(WORLD_2_LOCKER.name)
-	
+
+func _on_locker_1_open() -> void:
+	Simulation.switch_world(0)
+
+func _on_locker_2_open() -> void:
+	Simulation.switch_world(1)
 
 
 func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:
