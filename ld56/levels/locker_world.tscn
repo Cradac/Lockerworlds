@@ -94,7 +94,7 @@ scale = Vector2(0.253785, 0.253785)
 position = Vector2(959, 537)
 ignore_rotation = false
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 4.0
 
 [node name="Overtlay" parent="." instance=ExtResource("4_tfxhx")]
 
