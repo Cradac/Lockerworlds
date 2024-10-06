@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://wcndxecmb5rf"]
 
 [ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
-[ext_resource type="Script" path="res://levels/locker_world.gd" id="1_ngxh0"]
+[ext_resource type="Script" path="res://levels/locker_world.gd" id="1_wp8fv"]
 [ext_resource type="PackedScene" uid="uid://ujqb4sr73qsu" path="res://objects/post_it_note.tscn" id="2_k3frs"]
 [ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overtlay.tscn" id="4_tfxhx"]
 
 [node name="LockerWorld" type="Node2D"]
-script = ExtResource("1_ngxh0")
+script = ExtResource("1_wp8fv")
 
 [node name="PostIts" type="Node2D" parent="."]
 
@@ -97,3 +97,22 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="Overtlay" parent="." instance=ExtResource("4_tfxhx")]
+
+[connection signal="input_event" from="Lockers/Locker1" to="." method="_on_locker_input_event" binds= [0]]
+[connection signal="input_event" from="Lockers/Locker2" to="." method="_on_locker_input_event" binds= [1]]
+[connection signal="input_event" from="Lockers/Locker3" to="." method="_on_locker_input_event" binds= [2]]
+[connection signal="input_event" from="Lockers/Locker4" to="." method="_on_locker_input_event" binds= [3]]
+[connection signal="input_event" from="Lockers/Locker5" to="." method="_on_locker_input_event" binds= [4]]
+[connection signal="input_event" from="Lockers/Locker6" to="." method="_on_locker_input_event" binds= [5]]
+[connection signal="input_event" from="Lockers/Locker7" to="." method="_on_locker_input_event" binds= [6]]
+[connection signal="input_event" from="Lockers/Locker8" to="." method="_on_locker_input_event" binds= [7]]
+[connection signal="input_event" from="Lockers/Locker9" to="." method="_on_locker_input_event" binds= [8]]
+[connection signal="input_event" from="Lockers/Locker10" to="." method="_on_locker_input_event" binds= [9]]
+[connection signal="input_event" from="Lockers/Locker11" to="." method="_on_locker_input_event" binds= [10]]
+[connection signal="input_event" from="Lockers/Locker12" to="." method="_on_locker_input_event" binds= [11]]
+[connection signal="input_event" from="Lockers/Locker13" to="." method="_on_locker_input_event" binds= [12]]
+[connection signal="input_event" from="Lockers/Locker14" to="." method="_on_locker_input_event" binds= [13]]
+[connection signal="input_event" from="Lockers/Locker15" to="." method="_on_locker_input_event" binds= [14]]
+[connection signal="input_event" from="Lockers/Locker16" to="." method="_on_locker_input_event" binds= [15]]
+[connection signal="input_event" from="Lockers/Locker17" to="." method="_on_locker_input_event" binds= [16]]
+[connection signal="input_event" from="Lockers/Locker18" to="." method="_on_locker_input_event" binds= [17]]

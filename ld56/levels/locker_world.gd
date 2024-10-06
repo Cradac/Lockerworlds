@@ -3,8 +3,11 @@ extends Node2D
 var WORLD_1_LOCKER = null
 var WORLD_2_LOCKER = null
 
+var locker_ids = []
+
 @onready var lockers = self.get_node("Lockers").get_children()
 @onready var post_its = self.get_node("PostIts").get_children()
+@onready var camera_pos = $Camera2D.global_transform
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,9 +23,16 @@ func assign_locker_ids():
 	var rng = RandomNumberGenerator.new()
 	for locker in lockers:
 		rng.randomize()
-		locker.LOCKER_ID = rng.randi_range(100,999)
-		print(locker.LOCKER_ID)
-		locker.set_locker_id()
+		var locker_id = 0
+		while true:
+			locker_id = rng.randi_range(100,999)
+			if locker_id not in locker_ids:
+				locker_ids.append(locker_id)
+				print(locker_id)
+				break
+		locker.LOCKER_ID = locker_id
+		locker.set_id_label()
+
 
 func select_action_lockers():
 	WORLD_1_LOCKER = lockers.pick_random()
@@ -32,3 +42,16 @@ func select_action_lockers():
 	WORLD_2_LOCKER = lockers.pick_random()
 	post_its[1].assign_locker(WORLD_2_LOCKER)
 	print(WORLD_2_LOCKER.name)
+	
+
+
+func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:
+	if event is InputEventMouseButton:
+		var evt = event as InputEventMouseButton
+		if evt.button_index == 1 and evt.pressed:
+			if $Camera2D.zoom == Vector2(1,1):
+				$Camera2D.global_transform = lockers[index].get_child(0).global_transform
+				$Camera2D.zoom = Vector2(6,6)
+			else:
+				$Camera2D.zoom = Vector2(1,1)
+				$Camera2D.global_transform = camera_pos

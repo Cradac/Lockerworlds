@@ -82,5 +82,5 @@ func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 			set_lock()
 			check_code()
 
-func set_locker_id():
+func set_id_label():
 	label.text=center_text(LOCKER_ID)
