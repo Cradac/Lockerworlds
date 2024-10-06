@@ -53,20 +53,11 @@ func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, i
 		var evt = event as InputEventMouseButton
 		var tween = get_tree().create_tween().set_parallel(true)
 		if evt.button_index == 1 and evt.pressed:
-			print(evt)
 			if $Camera2D.zoom == Vector2(1,1):
 				tween.tween_property($Camera2D,"global_transform",lockers[index].get_child(0).global_transform,1)
 				tween.tween_property($Camera2D,"zoom",Vector2(6,6),1)
 			else:
-				tween.tween_property($Camera2D,"zoom",Vector2(1,1),1)
-				tween.tween_property($Camera2D,"global_transform",camera_pos,1)
-
-
-	
-
-
-
-
+				return
 
 func _on_post_it_note_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:
 	if event is InputEventMouseButton:
@@ -77,5 +68,18 @@ func _on_post_it_note_input_event(viewport: Node, event: InputEvent, shape_idx: 
 				tween.tween_property($Camera2D,"global_transform",post_its[index].get_child(0).global_transform,1)
 				tween.tween_property($Camera2D,"zoom",Vector2(9,9),1)
 			else:
+				return
+
+
+func _zclick_background(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		var evt = event as InputEventMouseButton
+		var tween = get_tree().create_tween().set_parallel(true)
+		if evt.button_index == 1 and evt.pressed:
+			var areas = $CanvasLayer/Overlay/Area2D.get_overlapping_areas()
+			print(areas)
+			if len(areas) >= 2:
+				return
+			if $Camera2D.zoom != Vector2(1,1):
 				tween.tween_property($Camera2D,"zoom",Vector2(1,1),1)
 				tween.tween_property($Camera2D,"global_transform",camera_pos,1)
