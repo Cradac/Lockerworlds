@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqcap60ldkpui"]
+[gd_scene load_steps=7 format=3 uid="uid://dqcap60ldkpui"]
 
 [ext_resource type="PackedScene" uid="uid://lyxusyca41vh" path="res://objects/locker.tscn" id="1_50qx8"]
 [ext_resource type="Script" path="res://levels/locker_world.gd" id="1_wp8fv"]
+[ext_resource type="Texture2D" uid="uid://cfwgjhfsproaq" path="res://assets/overworld/background.jpeg" id="2_0lf0h"]
 [ext_resource type="PackedScene" uid="uid://ujqb4sr73qsu" path="res://objects/post_it_note.tscn" id="2_k3frs"]
 [ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="4_tfxhx"]
 
@@ -10,6 +11,10 @@ size = Vector2(1934, 1085)
 
 [node name="LockerWorld" type="Node2D"]
 script = ExtResource("1_wp8fv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1280, 856)
+texture = ExtResource("2_0lf0h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
