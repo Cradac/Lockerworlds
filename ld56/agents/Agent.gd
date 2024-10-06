@@ -23,8 +23,6 @@ var nav_agent_type = preload("res://agents/AgentNav.tscn")
 
 
 
-@onready
-var poi_array: Array[PointOfInterest] = get_parent().poi
 var world: World
 var target_poi: PointOfInterest
 
@@ -147,19 +145,28 @@ func gender_reassignment_surgery():
 			girl_skin.show()
 
 func turn_animation(angle: float, sprite: AnimatedSprite2D):
+	print(angle)
 	if angle >= 15*PI/8 or angle < PI/8:
 		sprite.play("walk_r")
-	elif angle >= PI/8 or angle < 3*PI/8:
-		sprite.play("walk_tr")
-	elif angle >= 3*PI/8 or angle < 5*PI/8:
-		sprite.play("walk_t")
-	elif angle >= 5*PI/8 or angle < 7*PI/8:
-		sprite.play("walk_tl")
-	elif angle >= 7*PI/8 or angle < 9*PI/8:
-		sprite.play("walk_l")
-	elif angle >= 9*PI/8 or angle < 11*PI/8:
-		sprite.play("walk_bl")
-	elif angle >= 11*PI/8 or angle < 13*PI/8:
-		sprite.play("walk_b")
-	elif angle >= 13*PI/8 or angle < 15*PI/8:
+		print("playing walk_r")
+	elif angle >= PI/8 and angle < 3*PI/8:
 		sprite.play("walk_br")
+		print("playing walk_br")
+	elif angle >= 3*PI/8 and angle < 5*PI/8:
+		sprite.play("walk_t")
+		print("playing walk_t")
+	elif angle >= 5*PI/8 and angle < 7*PI/8:
+		sprite.play("walk_tl")
+		print("playing walk_tl")
+	elif angle >= 7*PI/8 and angle < 9*PI/8:
+		sprite.play("walk_l")
+		print("playing walk_l")
+	elif angle >= 9*PI/8 and angle < 11*PI/8:
+		sprite.play("walk_bl")
+		print("playing walk_bl")
+	elif angle >= 11*PI/8 and angle < 13*PI/8:
+		sprite.play("walk_b")
+		print("playing walk_b")
+	elif angle >= 13*PI/8 and angle < 15*PI/8:
+		sprite.play("walk_tr")
+		print("playing walk_tr")
