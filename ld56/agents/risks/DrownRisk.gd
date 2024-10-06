@@ -1,8 +1,8 @@
-class_name DarknessRisk extends Risk
+class_name DrownRisk extends Risk
 
 func _init() -> void:
 	morale_damage_per_second = 10
-	emoji = "🌑"
+	emoji = "🏊‍♀️"
 	chance = 0.3
 	alert_range = 450
 	
