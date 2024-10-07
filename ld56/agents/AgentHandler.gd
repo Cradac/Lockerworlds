@@ -14,7 +14,9 @@ var agents: Array[Agent] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
 	
+func spawn_agents():
 	world = get_parent()
 	for i in amount_spawned:
 		var newAgent = agent.instantiate()

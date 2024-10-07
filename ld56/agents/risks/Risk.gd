@@ -23,7 +23,10 @@ func trigger(poi: PointOfInterest, action_time: int) -> void:
 	
 	# This trigger function gets called immediately when agent starts action. Delay real trigger to feel better
 	var trigger_delay = randi_range(int(action_time*0.2), int(action_time*0.9))
-	get_tree().create_timer(trigger_delay).timeout.connect(_on_timeout)
+	if poi.world.rendered:
+		get_tree().create_timer(trigger_delay).timeout.connect(_on_timeout)
+	else:
+		_on_timeout()
 	
 func resolve() -> void:
 	remove_child(visuals)
@@ -35,6 +38,7 @@ func resolve() -> void:
 func _on_timeout() -> void:
 	poi.world.add_moral_dps(morale_damage_per_second)
 	poi.set_disabled(true)
+
 	visuals = visual_scene.instantiate()
 	visuals.z_index = 51 # overlay z index ++
 

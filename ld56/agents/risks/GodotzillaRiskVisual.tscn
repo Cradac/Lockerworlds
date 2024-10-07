@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b58pb07hihmfb"]
+
+[ext_resource type="Texture2D" uid="uid://bts2cyeteakpu" path="res://assets/overworld/godotzilla.png" id="1_2epf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdl8c"]
+size = Vector2(762, 680)
+
+[node name="Area2D" type="Area2D"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 492)
+shape = SubResource("RectangleShape2D_hdl8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.84217e-14, 484)
+scale = Vector2(0.484, 0.484)
+texture = ExtResource("1_2epf8")
