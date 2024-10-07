@@ -31,7 +31,7 @@ func _ready():
 	timer.start()
 	
 	showcase_worlds()
-	#switch_world(0)
+	
 	
 
 func get_remaining_moral() -> int:
@@ -72,6 +72,7 @@ func showcase_worlds():
 	await get_tree().create_timer(5.0).timeout
 	# TODO Show Message!
 	switch_to_locker()
+	#switch_world(0)
 	print("end")
 	simulation_active = true
 
