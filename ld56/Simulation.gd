@@ -12,7 +12,7 @@ var regenaration_rate = 40
 var simulated_action_chance = 0.2
 
 var progressed_time = 0
-var time_to_reach = 50
+var time_to_reach = 180
 
 var timer: Timer
 var simulation_active: bool = false

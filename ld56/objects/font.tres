@@ -1,0 +1,8 @@
+[gd_resource type="SystemFont" format=3 uid="uid://dwsducdgjal7l"]
+
+[resource]
+generate_mipmaps = true
+force_autohinter = true
+hinting = 2
+subpixel_positioning = 3
+multichannel_signed_distance_field = true

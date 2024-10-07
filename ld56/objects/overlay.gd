@@ -5,8 +5,26 @@ var bottom_right_corner = Vector2(1920,1080)
 const SPEED = 600
 var dir = Vector2(0,0)
 
+@export
+var overlay: Control
+
+@export
+var time_progress: ProgressBar
+
+@export
+var morale_progress: ProgressBar
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var time_sb = StyleBoxFlat.new()
+	time_progress.add_theme_stylebox_override("fill", time_sb)
+	time_sb.bg_color = Color("#00b80c")
+	time_progress.max_value = Simulation.time_to_reach
+	
+	var morale_sb = StyleBoxFlat.new()
+	morale_progress.add_theme_stylebox_override("fill", morale_sb)
+	morale_sb.bg_color = Color("#b80c00")
+	morale_progress.max_value = Simulation.starting_moral
 	pass # Replace with function body.
 
 
@@ -20,6 +38,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("settings") && !SettingsAndSound.settingsOpen :		
 		get_parent().add_child(preload("res://objects/Settings.tscn").instantiate())
 		SettingsAndSound.settingsOpen = true
+		
+	time_progress.value = Simulation.progressed_time
+	morale_progress.value = Simulation.get_remaining_moral()
 
 func controller(delta):
 	var movement = Vector2(0,0)
