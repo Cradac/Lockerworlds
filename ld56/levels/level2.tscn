@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dw485drlngsyw"]
+[gd_scene load_steps=8 format=4 uid="uid://dw485drlngsyw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_1o14i"]
 [ext_resource type="PackedScene" uid="uid://ehvpmuops7cv" path="res://objects/iso-tilemap.tscn" id="2_pc4sb"]
@@ -57,3 +57,5 @@ spawn_point = Vector2(850, 350)
 [node name="DarknessRiskButton" parent="." instance=ExtResource("7_ck7ow")]
 z_index = 20
 position = Vector2(207, 515)
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

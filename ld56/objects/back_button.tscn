@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dofla2lvxxurd" path="res://assets/overworld/back-button.png" id="1_ykhm5"]
 
 [node name="BackButton" type="Button"]
-z_index = 11
+z_index = 51
 offset_right = 408.0
 offset_bottom = 408.0
 scale = Vector2(0.31267, 0.31267)

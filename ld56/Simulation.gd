@@ -59,6 +59,7 @@ func switch_world(idx: int) -> void:
 	goto_world(worlds[idx])
 	
 func switch_to_locker() -> void:
+	print("Go to locker world")
 	goto_world(locker_world)
 
 func goto_scene(path):
@@ -88,6 +89,7 @@ func _deferred_goto_world(world):
 	get_tree().root.remove_child(current_scene)
 	if current_scene is World:
 		current_scene.set_rendered(false)
+		#current_scene.set_rendered()
 	
 	current_scene = world
 
@@ -95,4 +97,5 @@ func _deferred_goto_world(world):
 	get_tree().root.add_child(world)
 	get_tree().current_scene = world
 	
-	world.set_rendered(true)
+	if current_scene is World:
+		world.set_rendered(true)

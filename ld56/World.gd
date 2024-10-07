@@ -63,9 +63,8 @@ func _on_second_timeout() -> void:
 	#moral_damage += current_dps
 	debug.text = "Total: "+ str(moral_damage) + " DPS: "+str(current_dps)
 
-
-func _on_button_pressed() -> void:
-	Simulation.switch_to_locker()
-
 func set_rendered(rendered: bool) -> void:
 	self.rendered = rendered
+
+func _on_back_button_pressed() -> void:
+	Simulation.switch_to_locker()
