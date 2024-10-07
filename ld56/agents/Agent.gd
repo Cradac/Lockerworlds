@@ -151,7 +151,12 @@ func alert_to_risk(risk: Risk) -> void:
 		set_movement_target(get_random_pos())
 
 func get_random_pos() -> Vector2:
-	return Vector2(randi_range(510,1370), randi_range(160,960))
+	var rid = navigation_agent.get_navigation_map()
+	var random_pos = Vector2(randi_range(510,1370), randi_range(160,960))
+	
+	var closest_nav_point = NavigationServer2D.map_get_closest_point(rid, random_pos)
+	
+	return closest_nav_point
 
 
 func gender_reassignment_surgery():

@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dw485drlngsyw"]
+[gd_scene load_steps=7 format=4 uid="uid://dw485drlngsyw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_1o14i"]
 [ext_resource type="PackedScene" uid="uid://ehvpmuops7cv" path="res://objects/iso-tilemap.tscn" id="2_pc4sb"]
 [ext_resource type="Texture2D" uid="uid://btt8gf2mxgva8" path="res://assets/overworld/locker2_open.png" id="3_os8u6"]
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="4_bx7d4"]
-
-[ext_resource type="PackedScene" uid="uid://s368bvxohmnp" path="res://objects/Overlay.tscn" id="5_r1r4h"]
 [ext_resource type="PackedScene" uid="uid://ba2nvywlcymf5" path="res://objects/back_button.tscn" id="5_kw3ny"]
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="5_r1r4h"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_1o14i")
