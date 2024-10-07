@@ -2,7 +2,7 @@ class_name DrownRisk extends Risk
 
 func _init() -> void:
 	morale_damage_per_second = 10
-	emoji = "🏊‍♀️"
+	emoji = "drowning"
 	chance = 0.3
 	alert_range = 100
 	
