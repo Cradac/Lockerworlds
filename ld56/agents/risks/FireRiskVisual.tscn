@@ -1,24 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://pcdpld571fmx"]
+[gd_scene load_steps=8 format=3 uid="uid://pcdpld571fmx"]
 
-[ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="1_u520d"]
+[ext_resource type="Texture2D" uid="uid://dvnjd6cmwtm43" path="res://assets/overworld/Pixel Flame Spritesheet.png" id="2_18oew"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7lcw"]
+atlas = ExtResource("2_18oew")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byfgh"]
+atlas = ExtResource("2_18oew")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr6b0"]
+atlas = ExtResource("2_18oew")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2mba"]
+atlas = ExtResource("2_18oew")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fhgc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7lcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byfgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr6b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2mba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdl8c"]
 size = Vector2(100, 100)
 
 [node name="Area2D" type="Area2D"]
+z_index = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.76837e-07)
-scale = Vector2(0.78125, 0.78125)
-texture = ExtResource("1_u520d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+scale = Vector2(3.14215, 3.14215)
+sprite_frames = SubResource("SpriteFrames_3fhgc")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hdl8c")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -51.0
-offset_top = -26.0
-offset_right = 53.0
-offset_bottom = 23.0
-text = "Chuckles 
-I'm in Danger"

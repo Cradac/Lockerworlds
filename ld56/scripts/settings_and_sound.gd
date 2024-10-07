@@ -15,6 +15,19 @@ var master_volume : float = 0.8
 var active_music : AudioStreamPlayer2D = null
 
 
+func set_master_volume(vol : float):
+	master_volume = vol
+	AudioServer.set_bus_volume_db(0, linear_to_db(vol))
+
+func set_music_volume(vol : float):
+	music_volume = vol
+	print(AudioServer.get_bus_index("Music"))
+	AudioServer.set_bus_volume_db(1, linear_to_db(vol))
+	
+func set_sound_volume(vol : float):
+	sound_volume = vol
+	AudioServer.set_bus_volume_db(2, linear_to_db(vol))
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_music()
