@@ -1,5 +1,7 @@
 class_name DarknessRisk extends Risk
 
+@onready var world = self.get_parent()
+
 func _init() -> void:
 	morale_damage_per_second = 10
 	emoji = "darkness"
@@ -15,7 +17,8 @@ func trigger(poi: PointOfInterest, action_time: int) -> void:
 func resolve() -> void:
 	super()
 	
-func _on_timeout() -> void:	
+func _on_timeout() -> void:
+	world.darknessRiskButton.status = false
 	super()
 
 func _on_visual_input_event(viewport: Viewport, event: InputEvent, shape_idx: int):

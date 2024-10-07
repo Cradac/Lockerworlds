@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://ehvpmuops7cv"]
+[gd_scene load_steps=55 format=3 uid="uid://ehvpmuops7cv"]
 
 [ext_resource type="Texture2D" uid="uid://r20q0y7jbi87" path="res://assets/Iso-Tileset/isometric-sandbox-sheet.png" id="1_n8lvl"]
 [ext_resource type="Texture2D" uid="uid://pi1l56d20q8s" path="res://assets/Iso-Tileset/isometric-sandbox-sheet-custom.png" id="1_paq5d"]
+[ext_resource type="Texture2D" uid="uid://c7n0baqrg61vv" path="res://assets/Iso-Tileset/lamp.png" id="2_oedql"]
 [ext_resource type="Script" path="res://objects/iso_tilemap.gd" id="3_uyfdn"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wja2l"]
@@ -112,6 +113,14 @@ texture_region_size = Vector2i(32, 32)
 3:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_hlmsy")
 4:1/0 = 0
 4:1/0/custom_data_1 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8a8vd"]
+texture = ExtResource("2_oedql")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -24)
+0:0/0/custom_data_0 = "lamp"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sc1co"]
 vertices = PackedVector2Array(16, 0, 0, 8, -16, 0, 0, -8)
@@ -493,6 +502,7 @@ custom_data_layer_1/name = "obstacle"
 custom_data_layer_1/type = 1
 sources/4 = SubResource("TileSetAtlasSource_sxiae")
 sources/0 = SubResource("TileSetAtlasSource_7irlw")
+sources/1 = SubResource("TileSetAtlasSource_8a8vd")
 pattern_0 = SubResource("TileMapPattern_wja2l")
 pattern_1 = SubResource("TileMapPattern_52dpv")
 pattern_2 = SubResource("TileMapPattern_xs2ka")
