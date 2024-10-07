@@ -5,4 +5,3 @@ navigation_layers = 3
 avoidance_enabled = true
 radius = 5.0
 neighbor_distance = 60.0
-debug_enabled = true
