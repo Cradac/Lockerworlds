@@ -119,7 +119,7 @@ texture = ExtResource("2_oedql")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, -24)
+0:0/0/texture_origin = Vector2i(0, 24)
 0:0/0/custom_data_0 = "lamp"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sc1co"]

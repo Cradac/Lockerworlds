@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfpsuccn1s243"]
 
-[ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="1_irp7n"]
+[ext_resource type="Texture2D" uid="uid://xsjyqtg50g6f" path="res://assets/overworld/darkness.png" id="1_vgurs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdl8c"]
 size = Vector2(100, 100)
@@ -8,14 +8,17 @@ size = Vector2(100, 100)
 [node name="Area2D" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.76837e-07)
-scale = Vector2(0.78125, 0.78125)
-texture = ExtResource("1_irp7n")
+position = Vector2(6, -10)
+scale = Vector2(1.87152, 1.87152)
+texture = ExtResource("1_vgurs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_hdl8c")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -60.0
 offset_top = -26.0
 offset_right = 63.0
