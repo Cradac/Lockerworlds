@@ -17,14 +17,11 @@ func _process(delta: float) -> void:
 	else:
 		sprite.play ("off")
 
-func _on_button_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:
-	print("lever action rifle")
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		var evt = event as InputEventMouseButton
-		print("lever action rifle")
 		if evt.button_index == 1 and evt.pressed:
 			for child in world.get_children():
 				if child is DarknessRisk:
-					print("we got dem darkness")
 					status = true
 					child.resolve()

@@ -45,7 +45,7 @@ func play_sfx(name : String):
 
 func init_sound():
 	sound_dict = {
-		"eletrocute": preload("res://sounds/electrocute.wav"),
+		"electrocute": preload("res://sounds/electrocute.wav"),
 		"lock_click": preload("res://sounds/lock_click.wav"),
 		"lock_open": preload("res://sounds/lock_open.wav"),
 		"drought": preload("res://sounds/drought.wav"),
