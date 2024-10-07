@@ -73,6 +73,7 @@ func init_sound():
 		sound_dict[sound_key] = strim #sound is audiostreamplayer2D
 		add_child(sound_dict[sound_key])
 		sound_dict[sound_key].bus = &"SFX"
+	sound_dict["electrocute"].volume_db = -10.0
 		
 	
 func init_music():
