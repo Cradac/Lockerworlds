@@ -9,7 +9,7 @@ var worlds: Array[World] = []
 
 var starting_moral = 50000
 var regenaration_rate = 50
-var simulated_action_chance = 0.3
+var simulated_action_chance = 0.05
 
 var timer: Timer
 var simulation_active: bool = false
@@ -118,9 +118,11 @@ func _deferred_goto_world(world):
 	
 	current_scene = world
 
+	if current_scene is World:
+			world.set_rendered(true)
+	
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(world)
 	get_tree().current_scene = world
 	
-	if current_scene is World:
-		world.set_rendered(true)
+	
