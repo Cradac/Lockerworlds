@@ -15,8 +15,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(495, 83, 1385, 87, 1382
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_1o14i")
-metadata/_edit_vertical_guides_ = [1371.0, 512.0, 850.0]
-metadata/_edit_horizontal_guides_ = [159.0, 962.0, 350.0]
+metadata/_edit_vertical_guides_ = [1371.0, 512.0, 831.0]
+metadata/_edit_horizontal_guides_ = [159.0, 962.0, 855.0]
 
 [node name="layer0" parent="." node_paths=PackedStringArray("next_layer") instance=ExtResource("2_pc4sb")]
 y_sort_enabled = true
@@ -59,7 +59,9 @@ z_index = 15
 
 [node name="AgentHandler" type="Node" parent="."]
 script = ExtResource("4_bx7d4")
-spawn_point = Vector2(850, 350)
+amount_spawned = 50
+spread = 150
+spawn_point = Vector2(830, 855)
 
 [node name="BackButton" parent="." instance=ExtResource("5_kw3ny")]
 

@@ -41,12 +41,15 @@ func assign_locker_ids():
 
 
 func select_action_lockers():
-	WORLD_1_LOCKER = lockers.pick_random()
+	var possible_lockers = lockers.duplicate()
+	
+	WORLD_1_LOCKER = possible_lockers.pick_random()
 	post_its[0].assign_locker(WORLD_1_LOCKER)
 	WORLD_1_LOCKER.locker_opened.connect(_on_locker_1_open);
 	print(WORLD_1_LOCKER.name)
+	possible_lockers.remove_at(possible_lockers.find(WORLD_1_LOCKER))
 
-	WORLD_2_LOCKER = lockers.pick_random()
+	WORLD_2_LOCKER = possible_lockers.pick_random()
 	post_its[1].assign_locker(WORLD_2_LOCKER)
 	WORLD_2_LOCKER.locker_opened.connect(_on_locker_2_open);
 	print(WORLD_2_LOCKER.name)
