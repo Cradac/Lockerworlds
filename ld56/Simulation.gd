@@ -12,7 +12,7 @@ var regenaration_rate = 40
 var simulated_action_chance = 0.2
 
 var progressed_time = 0
-var time_to_reach = 50
+var time_to_reach = 180
 
 var timer: Timer
 var simulation_active: bool = false
@@ -72,10 +72,10 @@ func check_moral() -> void:
 
 func showcase_worlds():
 	print("start showcase")
-	switch_world(0)
+	switch_world(0, 0)
 	# TODO Show Message!
 	await get_tree().create_timer(5.0).timeout
-	switch_world(1)
+	switch_world(1, 0)
 	# TODO Show Message!
 	await get_tree().create_timer(5.0).timeout
 	# TODO Show Message!
@@ -88,7 +88,8 @@ func showcase_worlds():
 func _process(delta: float) -> void:
 	pass
 
-func switch_world(idx: int) -> void:
+func switch_world(idx: int, colour: int) -> void:
+	worlds[idx].colour = colour
 	SettingsAndSound.set_music(1 + 2*idx) #dirty and hacky but time lul
 	goto_world(worlds[idx])
 	

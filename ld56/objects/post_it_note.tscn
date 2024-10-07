@@ -2,13 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/post_it_note.gd" id="1_30ojs"]
 [ext_resource type="Texture2D" uid="uid://b85wfb15vvv15" path="res://assets/overworld/postit.png" id="2_3ien3"]
-
-[sub_resource type="SystemFont" id="SystemFont_fb8pp"]
-generate_mipmaps = true
-force_autohinter = true
-hinting = 2
-subpixel_positioning = 3
-multichannel_signed_distance_field = true
+[ext_resource type="SystemFont" uid="uid://dwsducdgjal7l" path="res://objects/font.tres" id="3_dc0nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8apw"]
 size = Vector2(65, 64)
@@ -32,7 +26,7 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = SubResource("SystemFont_fb8pp")
+theme_override_fonts/normal_font = ExtResource("3_dc0nn")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "the code for locker 999 is: 1234"

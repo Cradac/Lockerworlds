@@ -7,6 +7,7 @@ class_name Locker extends Node2D
 @onready var label = $Locker/Locker/Tag/Label
 @onready var lock = $Locker/Locker/Lock
 @onready var texture = $Locker/Locker_Texture
+var colour = 0
 
 signal locker_opened
 
@@ -28,7 +29,8 @@ func _process(delta: float) -> void:
 func random_locker_texture():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	texture.set_frame_and_progress(rng.randi_range(0,4), 0)
+	colour = rng.randi_range(0,4)
+	texture.set_frame_and_progress(colour, 0)
 
 func generate_code():
 	var rng = RandomNumberGenerator.new()
@@ -91,7 +93,6 @@ func set_id_label():
 	label.text=center_text(LOCKER_ID)
 
 func _on_lock_frame_changed() -> void:
-	await get_tree().create_timer(0.5).timeout 
-	lock.set_frame_and_progress(0,0)
-	locker_opened.emit()
-	
+	await get_tree().create_timer(0.5).timeout
+	reset_lock_position()
+	locker_opened.emit(colour)
