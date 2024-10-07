@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://drgrd05kbs2fl"]
+[gd_scene load_steps=2 format=3 uid="uid://b6ldta41kgknx"]
 
 [ext_resource type="SystemFont" uid="uid://dwsducdgjal7l" path="res://objects/font.tres" id="1_2p3dh"]
 
@@ -10,19 +10,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+z_index = 100
 offset_left = 66.0
 offset_top = 34.0
 offset_right = 1847.0
 offset_bottom = 1065.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.548963, 0.548963, 0.548963, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/normal_font = ExtResource("1_2p3dh")
 theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 65
 bbcode_enabled = true
 text = "[center]
-As you can see those little people need some help.
-They try to live their lives but stuff jsut keeps on happening.
+Those little people need your help.
+They try to live their lives but stuff just keeps on happening.
 
 Access the lockers and try to keep things in order.
 Just click the happy little accidents and try to keep things alive until your timer is up.

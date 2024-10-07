@@ -75,12 +75,20 @@ func check_moral() -> void:
 func showcase_worlds():
 	print("start showcase")
 	switch_world(0, 0)
-	# TODO Show Message!
-	await get_tree().create_timer(5.0).timeout
+	
+	var text1_scene = preload("res://objects/tutorial1.tscn")
+	var text1 = text1_scene.instantiate()
+	get_tree().root.add_child.call_deferred(text1)
+	await get_tree().create_timer(10.0).timeout
+	get_tree().root.remove_child(text1)
 	switch_world(1, 0)
-	# TODO Show Message!
-	await get_tree().create_timer(5.0).timeout
-	# TODO Show Message!
+	
+	var text2_scene = preload("res://objects/tutorial2.tscn")
+	var text2 = text2_scene.instantiate()
+	get_tree().root.add_child(text2)
+	await get_tree().create_timer(10.0).timeout
+	get_tree().root.remove_child(text2)
+	
 	switch_to_locker()
 	print("end showcase")
 	#switch_world(0)
