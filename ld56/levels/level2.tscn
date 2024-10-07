@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=4 uid="uid://dw485drlngsyw"]
+[gd_scene load_steps=6 format=4 uid="uid://dw485drlngsyw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_1o14i"]
 [ext_resource type="PackedScene" uid="uid://ehvpmuops7cv" path="res://objects/iso-tilemap.tscn" id="2_pc4sb"]
 [ext_resource type="Texture2D" uid="uid://btt8gf2mxgva8" path="res://assets/overworld/locker2_open.png" id="3_os8u6"]
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="4_bx7d4"]
+[ext_resource type="PackedScene" uid="uid://ba2nvywlcymf5" path="res://objects/back_button.tscn" id="5_kw3ny"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_1o14i")
 metadata/_edit_vertical_guides_ = [1371.0, 512.0, 850.0]
 metadata/_edit_horizontal_guides_ = [159.0, 962.0, 350.0]
@@ -45,3 +46,5 @@ texture = ExtResource("3_os8u6")
 [node name="AgentHandler" type="Node" parent="."]
 script = ExtResource("4_bx7d4")
 spawn_point = Vector2(850, 350)
+
+[node name="BackButton" parent="." instance=ExtResource("5_kw3ny")]

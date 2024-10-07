@@ -20,10 +20,6 @@ texture = ExtResource("2_0lf0h")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Overlay" parent="CanvasLayer" instance=ExtResource("4_tfxhx")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 
@@ -116,6 +112,7 @@ position_smoothing_speed = 4.0
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = -1
+position = Vector2(9, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(957, 532.5)
