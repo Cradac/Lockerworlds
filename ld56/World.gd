@@ -38,7 +38,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	overlaySprite.set_frame_and_progress(colour, 0)
 	if current_dps >= 30:
-		SettingsAndSound.set_music(SettingsAndSound.current_world,true)
+		if !(SettingsAndSound.current_index == 2 or SettingsAndSound.current_index == 4):
+			SettingsAndSound.set_music(SettingsAndSound.current_index + 1)
+	else:
+		if !(SettingsAndSound.current_index == 1 or SettingsAndSound.current_index == 3):
+			SettingsAndSound.set_music(SettingsAndSound.current_index - 1)
 
 func get_valid_poi() -> PointOfInterest:
 	if not Simulation.simulation_active:

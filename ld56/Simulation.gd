@@ -90,12 +90,12 @@ func _process(delta: float) -> void:
 
 func switch_world(idx: int, colour: int) -> void:
 	worlds[idx].colour = colour
-	SettingsAndSound.set_music(idx + 1,false) #dirty and hacky but time lul
+	SettingsAndSound.set_music(1 + 2*idx) #dirty and hacky but time lul
 	goto_world(worlds[idx])
 	
 	
 func switch_to_locker() -> void:
-	SettingsAndSound.set_music(0,false) #ich bin ein Ziegelstein
+	SettingsAndSound.set_music(0) #ich bin ein Ziegelstein
 	goto_world(locker_world)
 
 func goto_scene(path):
