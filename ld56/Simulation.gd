@@ -12,7 +12,7 @@ var regenaration_rate = 40
 var simulated_action_chance = 0.2
 
 var progressed_time = 0
-var time_to_reach = 50
+var time_to_reach = 180
 
 var timer: Timer
 var simulation_active: bool = false
@@ -90,11 +90,12 @@ func _process(delta: float) -> void:
 
 func switch_world(idx: int, colour: int) -> void:
 	worlds[idx].colour = colour
+	SettingsAndSound.set_music(idx + 1,false) #dirty and hacky but time lul
 	goto_world(worlds[idx])
 	
 	
 func switch_to_locker() -> void:
-	print("Go to locker world")
+	SettingsAndSound.set_music(0,false) #ich bin ein Ziegelstein
 	goto_world(locker_world)
 
 func goto_scene(path):

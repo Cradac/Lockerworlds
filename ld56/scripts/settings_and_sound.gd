@@ -11,12 +11,41 @@ var music_arr : Array[AudioStreamPlayer2D] = []
 #volumes
 var sound_volume : float = 0.8
 var music_volume : float = 0.8
-var master_volume : float = 0.8
+var master_volume : float = 0.5
 
 var settingsOpen : bool = false
+var current_world : int = 0
+var current_index = 1
 
-var active_music : AudioStreamPlayer2D = null
+var active_music : AudioStreamPlayer2D = locker_music
 var sound_dict = {}
+
+func set_music(lvl : int, drama : bool):
+	if music_arr == []:
+		return
+	current_world = lvl
+	if lvl == 0:
+		switch_music(music_arr[current_index],music_arr[0])
+		#music_arr[0]
+		current_index = 0
+	if lvl == 1:
+		if drama:
+			switch_music(music_arr[current_index],music_arr[2])
+			#music_arr[2].volume_db = 0.0
+			current_index = 2
+		else:
+			switch_music(music_arr[current_index],music_arr[1])
+			#music_arr[1].volume_db = 0.0
+			current_index = 1
+	else:
+		if drama:
+			switch_music(music_arr[current_index],music_arr[4])
+			#music_arr[4].volume_db = 0.0
+			current_index = 4
+		else:
+			switch_music(music_arr[current_index],music_arr[3])
+			#music_arr[3].volume_db = 0.0
+			current_index = 3
 
 func set_master_volume(vol : float):
 	master_volume = vol
@@ -38,7 +67,6 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(master_volume))
 	AudioServer.set_bus_volume_db(1, linear_to_db(music_volume))
 	AudioServer.set_bus_volume_db(2, linear_to_db(sound_volume))
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -81,13 +109,13 @@ func init_music():
 	for mus in music_arr:
 		add_child(mus)
 		mus.bus = &"Music"
-		mus.volume_db = -80.0
-		mus.play()
-	level1_music.volume_db = 10
+		#mus.volume_db = -80.0
+		#mus.play()
+	music_arr[1].play
 	
-func switch_music(player : AudioStreamPlayer2D):
-	var current_song_position = active_music.get_playback_position()
-	#player.volume_db = -80.0 ### start silent
-	player.play( current_song_position )
-	active_music = player
+func switch_music(oldplayer : AudioStreamPlayer2D, newplayer : AudioStreamPlayer2D, ):
+	var current_song_position = oldplayer.get_playback_position()
+	oldplayer.stop()
+	newplayer.play( current_song_position )
+	
 	
