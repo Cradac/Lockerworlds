@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://ehvpmuops7cv"]
+[gd_scene load_steps=50 format=3 uid="uid://ehvpmuops7cv"]
 
 [ext_resource type="Texture2D" uid="uid://r20q0y7jbi87" path="res://assets/Iso-Tileset/isometric-sandbox-sheet.png" id="1_n8lvl"]
 [ext_resource type="Texture2D" uid="uid://pi1l56d20q8s" path="res://assets/Iso-Tileset/isometric-sandbox-sheet-custom.png" id="1_paq5d"]
+[ext_resource type="Script" path="res://objects/iso_tilemap.gd" id="3_uyfdn"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wja2l"]
 tile_data = PackedInt32Array(0, 131076, 7, 65536, 196612, 6, 1, 131076, 7, 65537, 196612, 6)
@@ -493,3 +494,4 @@ pattern_6 = SubResource("TileMapPattern_ys2qc")
 
 [node name="Iso-tilemap" type="TileMapLayer"]
 tile_set = SubResource("TileSet_82odc")
+script = ExtResource("3_uyfdn")
