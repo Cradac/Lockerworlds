@@ -4,7 +4,7 @@ func _init() -> void:
 	morale_damage_per_second = 10
 	emoji = "fire"
 	chance = 0.3
-	alert_range = 450
+	alert_range = 150
 	
 	visual_scene = preload("res://agents/risks/FireRiskVisual.tscn")
 	
