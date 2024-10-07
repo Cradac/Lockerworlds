@@ -7,12 +7,12 @@ var locker_world
 
 var worlds: Array[World] = []
 
-var starting_moral = 50000
-var regenaration_rate = 40
-var simulated_action_chance = 0.2
+var starting_moral = 20000
+var regenaration_rate = 0
+var simulated_action_chance = 0.3
 
 var progressed_time = 0
-var time_to_reach = 180
+var time_to_reach = 300
 
 var timer: Timer
 var simulation_active: bool = false
@@ -41,8 +41,11 @@ func _ready():
 
 func get_remaining_moral() -> int:
 	var damage = 0
-	for world in worlds:
-		damage += world.moral_damage
+	if simulation_active:
+		for world in worlds:
+			if not world == null:
+				damage += world.moral_damage
+			
 	return starting_moral - damage
 	
 func _tick_simulation() -> void:

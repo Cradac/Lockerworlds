@@ -12,6 +12,7 @@ grow_vertical = 2
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 z_index = 100
+layout_mode = 0
 offset_left = 66.0
 offset_top = 34.0
 offset_right = 1847.0

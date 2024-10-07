@@ -706,6 +706,7 @@ collision_mask = 3
 input_pickable = true
 platform_wall_layers = 2
 script = ExtResource("1_gdgd0")
+movement_speed = 60.0
 metadata/_edit_vertical_guides_ = [3.0]
 metadata/_edit_horizontal_guides_ = [10.0]
 
