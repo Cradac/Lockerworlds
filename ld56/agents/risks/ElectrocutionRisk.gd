@@ -3,7 +3,7 @@ class_name ElectrocutionRisk extends Risk
 func _init() -> void:
 	morale_damage_per_second = 10
 	emoji = "power"
-	chance = 0.3
+	chance = 0.4
 	alert_range = 100
 	
 	visual_scene = preload("res://agents/risks/ElecticutionRiskVisual.tscn")

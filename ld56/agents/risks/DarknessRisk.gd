@@ -1,9 +1,9 @@
 class_name DarknessRisk extends Risk
 
 func _init() -> void:
-	morale_damage_per_second = 10
+	morale_damage_per_second = 100
 	emoji = "darkness"
-	chance = 0.3
+	chance = 0.15
 	alert_range = 1000
 	
 	visual_scene = preload("res://agents/risks/DarknessRiskVisual.tscn")

@@ -32,10 +32,18 @@ texture = ExtResource("2_o7trs")
 offset_left = -447.0
 offset_top = 16.0
 offset_right = -332.0
-offset_bottom = 60.0
+offset_bottom = 59.0
 rotation = -1.5708
 theme_override_fonts/font = ExtResource("3_fgohy")
 step = 1.0
+
+[node name="Label" type="Label" parent="Area2D/Pointything/TimeProgressBar"]
+z_index = 2
+offset_left = 11.0
+offset_top = -3.99996
+offset_right = 136.0
+offset_bottom = 19.0
+text = "Time Passed"
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D/Pointything"]
 position = Vector2(-609, -47)
@@ -50,3 +58,14 @@ rotation = -1.5708
 theme_override_fonts/font = ExtResource("3_fgohy")
 step = 1.0
 value = 100.0
+
+[node name="Label" type="Label" parent="Area2D/Pointything/Polygon2D/Morale"]
+z_index = 2
+layout_mode = 0
+offset_left = 21.9999
+offset_top = 19.0001
+offset_right = 110.0
+offset_bottom = 68.0001
+text = "Lockerlings
+Morale"
+horizontal_alignment = 1
