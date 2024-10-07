@@ -94,6 +94,5 @@ func set_id_label():
 
 func _on_lock_frame_changed() -> void:
 	await get_tree().create_timer(0.5).timeout
-	print("LOCKER COLOUR CODE IS")
-	print(colour)
+	reset_lock_position()
 	locker_opened.emit(colour)
