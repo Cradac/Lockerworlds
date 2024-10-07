@@ -10,6 +10,8 @@ We were inspired a scene in the movie "Men in Black 2" to create a god-simulator
 
 The game was developed in the Godot Game Engine.
 
+![starting animation of Lockerworld](images/lockerworlds_cover_image.png)
+
 ## Controls
 
 The game is controlled with the mouse.
@@ -25,8 +27,6 @@ Animated Fire by Nicole Marie T
 “Isometric Tiles Template for 32x32 pixel art” by route1rodent.itch.io
 “Small 8-direction Characters” by axulart.itch.io
 “Lightning VFX Free Pack” by govfx.itch.io
-
-The wonky looking overworlds graphics (hand, lockers, locks, ...) were done by us, so please change your graphics rating according to this.
 
 ## Links
 
