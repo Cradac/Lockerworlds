@@ -35,6 +35,7 @@ func _on_timeout() -> void:
 	poi.world.add_moral_dps(morale_damage_per_second)
 	poi.set_disabled(true)
 	visuals = visual_scene.instantiate()
+	visuals.z_index = 51 # overlay z index ++
 
 	visuals.input_event.connect(_on_visual_input_event)
 	add_child(visuals)
@@ -46,6 +47,7 @@ func alert_agents() -> void:
 		get_tree().call_group("agents", "alert_to_risk", self)
 	
 func _on_visual_input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
+	print(event)
 	if event is InputEventMouseButton:
 		resolve()
 	pass
