@@ -97,6 +97,8 @@ spread = 150
 spawn_point = Vector2(830, 855)
 
 [node name="BackButton" parent="." instance=ExtResource("5_kw3ny")]
+offset_top = 30.0
+offset_bottom = 438.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_tydho")

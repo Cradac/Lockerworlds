@@ -173,6 +173,8 @@ vertices = PackedVector2Array(512, 247, 528, 255, 544, 246, 561, 256, 576, 246, 
 affect_navigation_mesh = true
 
 [node name="BackButton" parent="." instance=ExtResource("5_gj7u2")]
+offset_top = 30.0
+offset_bottom = 438.0
 
 [connection signal="input_event" from="DarknessRiskButton" to="DarknessRiskButton" method="_on_input_event"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
