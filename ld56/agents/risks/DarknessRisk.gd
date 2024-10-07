@@ -1,7 +1,5 @@
 class_name DarknessRisk extends Risk
 
-@onready var world = self.get_parent()
-
 func _init() -> void:
 	morale_damage_per_second = 10
 	emoji = "darkness"
@@ -17,8 +15,9 @@ func resolve() -> void:
 	super()
 	
 func _on_timeout() -> void:
-	SettingsAndSound.play_sfx("darkness")
-	world.darknessRiskButton.status = false
+	if poi.world.rendered:
+		SettingsAndSound.play_sfx("darkness")
+		poi.world.darknessRiskButton.status = false
 	super()
 	visuals.z_index = 10
 
