@@ -189,7 +189,8 @@ vertices = PackedVector2Array(465, 193, 494, 207, 545, 182, 513, 167)
 affect_navigation_mesh = true
 
 [node name="DarknessRiskButton" parent="." instance=ExtResource("7_ck7ow")]
-z_index = 20
+z_index = 51
 position = Vector2(207, 515)
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="input_event" from="DarknessRiskButton" to="DarknessRiskButton" method="_on_input_event"]

@@ -13,6 +13,8 @@ var time_progress: ProgressBar
 
 @export
 var morale_progress: ProgressBar
+@export
+var morale_clip: Polygon2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +22,8 @@ func _ready() -> void:
 	time_progress.add_theme_stylebox_override("fill", time_sb)
 	time_sb.bg_color = Color("#00b80c")
 	time_progress.max_value = Simulation.time_to_reach
+	
+	morale_clip.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
 	
 	var morale_sb = StyleBoxFlat.new()
 	morale_progress.add_theme_stylebox_override("fill", morale_sb)

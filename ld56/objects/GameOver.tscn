@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0e3lv8xoiper"]
+
+[ext_resource type="Script" path="res://objects/game_over.gd" id="1_7igbs"]
+[ext_resource type="Texture2D" uid="uid://cfwgjhfsproaq" path="res://assets/overworld/background.jpeg" id="1_h5ckm"]
+[ext_resource type="Texture2D" uid="uid://bts2cyeteakpu" path="res://assets/overworld/godotzilla.png" id="2_2nq6b"]
+[ext_resource type="SystemFont" uid="uid://dwsducdgjal7l" path="res://objects/font.tres" id="3_7j8s7"]
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="5_lphk5"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7igbs")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 1921.0
+offset_bottom = 215.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_7j8s7")
+theme_override_font_sizes/normal_font_size = 131
+bbcode_enabled = true
+text = "[center]You won![/center]"
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(962, 572)
+texture = ExtResource("1_h5ckm")
+
+[node name="Godotzilla" type="Sprite2D" parent="."]
+position = Vector2(275, 825)
+scale = Vector2(0.357, 0.357)
+texture = ExtResource("2_2nq6b")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 239.0
+offset_right = 1595.0
+offset_bottom = 451.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_7j8s7")
+theme_override_font_sizes/normal_font_size = 71
+bbcode_enabled = true
+text = "[center]Thanks for playing our entry for
+LD56 - \"Tiny Creatures\"[/center]"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 464.0
+offset_right = 1921.0
+offset_bottom = 854.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_7j8s7")
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_font_size = 70
+bbcode_enabled = true
+text = "[left]Made by[/left]
+[b]Cradac[/b]									 		 cradac@dice.camp
+[b]Cybermuell[/b] 						 cybermuell@frameperfect.space
+[b]DorianSnowball[/b]  doriansnowball@frameperfect.space"
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 837.0
+offset_right = 1908.0
+offset_bottom = 1256.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_7j8s7")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 70
+bbcode_enabled = true
+text = "[right]Attributions
+Music by Lars Austermeier
+Bubble Sprites: “32x32 pixel bubbles sprites” by kia.itch.io
+Animated Fire by Nicole Marie T
+“Isometric Tiles Template for 32x32 pixel art” by route1rodent.itch.io
+“Small 8-direction Characters” by axulart.itch.io
+“Lightning VFX Free Pack” by govfx.itch.io
+"
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1721.0
+offset_top = 23.0
+offset_right = 1891.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("3_7j8s7")
+theme_override_font_sizes/font_size = 33
+text = "Exit Game"
+
+[node name="Overlay" parent="." instance=ExtResource("5_lphk5")]
+layout_mode = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
