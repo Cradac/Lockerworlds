@@ -38,6 +38,7 @@ func get_remaining_moral() -> int:
 	
 func _tick_moral_regeneration() -> void:
 	for world in worlds:
+		world.moral_damage += world.current_dps
 		world.moral_damage = max(world.moral_damage - regenaration_rate, 0)
 	
 	check_moral()
@@ -55,7 +56,7 @@ func _process(delta: float) -> void:
 	pass
 
 func switch_world(idx: int) -> void:
-	goto_world(worlds[0])
+	goto_world(worlds[idx])
 	
 func switch_to_locker() -> void:
 	goto_world(locker_world)

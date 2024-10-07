@@ -53,17 +53,19 @@ func actor_setup():
 
 	bubble.hide()
 	# Now that the navigation map is no longer empty, set the movement target.
-	target_poi = world.get_valid_poi()
-	set_movement_target(target_poi.position)
+	
+	set_new_target()
 
-func set_movement_target(movement_target: Vector2):
+func set_movement_target(movement_target: Vector2) -> bool:
 	#debug.text = str(movement_target.x) + "," + str(movement_target.y)
 	navigation_agent.target_position = movement_target
 	navigation_agent.get_next_path_position()
+	return navigation_agent.is_target_reachable()
 
 func _physics_process(delta):
 
 	var current_agent_position: Vector2 = global_position
+		
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
@@ -107,14 +109,24 @@ func _on_target_reached() -> void:
 func set_new_target():
 	navigation_agent.queue_free()
 	create_nav_agent()
-	target_poi = world.get_valid_poi()
-	if target_poi == null:
-		debug.text = "no PoI"
-		set_movement_target(get_random_pos())
-	else:
-		debug.text = ""
-		bubble.hide()
-		set_movement_target(target_poi.position)
+	
+	var attempt: int = 0
+	while true:
+		if attempt % 2 == 0:
+			target_poi = world.get_valid_poi()
+		else:
+			target_poi = null
+		if target_poi == null:
+			#debug.text = "no PoI"
+			if set_movement_target(get_random_pos()):
+				break
+		else:
+			debug.text = ""
+			bubble.hide()
+			if set_movement_target(target_poi.position):
+				break
+		attempt += 1
+
 
 func _on_timer_timeout() -> void:
 	set_new_target()

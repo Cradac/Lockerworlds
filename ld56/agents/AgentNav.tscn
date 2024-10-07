@@ -4,4 +4,3 @@
 path_max_distance = 80.0
 avoidance_enabled = true
 neighbor_distance = 150.0
-debug_enabled = true
