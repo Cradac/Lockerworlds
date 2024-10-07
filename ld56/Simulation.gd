@@ -34,7 +34,7 @@ func _ready():
 	timer.start()
 	
 	showcase_worlds()
-	#switch_world(0)
+	
 	
 
 func get_remaining_moral() -> int:
@@ -81,6 +81,7 @@ func showcase_worlds():
 	# TODO Show Message!
 	switch_to_locker()
 	print("end showcase")
+	#switch_world(0)
 	simulation_active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
