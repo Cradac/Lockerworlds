@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gyl21b4fvkby"]
 
-[ext_resource type="Texture2D" uid="uid://caxpdo3gmgv8f" path="res://assets/overworld/tree_not_on_fire.png" id="1_u0bkj"]
+[ext_resource type="Texture2D" uid="uid://dg4g50sclb712" path="res://assets/overworld/tree_on_fire.png" id="1_q1nhn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdl8c"]
 size = Vector2(32, 57)
@@ -14,4 +14,4 @@ shape = SubResource("RectangleShape2D_hdl8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)
-texture = ExtResource("1_u0bkj")
+texture = ExtResource("1_q1nhn")
