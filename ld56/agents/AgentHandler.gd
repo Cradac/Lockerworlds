@@ -21,6 +21,9 @@ func spawn_agents():
 	for i in amount_spawned:
 		var newAgent = agent.instantiate()
 		var spawn = spawn_point + Vector2(randf_range(-1, 1)*spread, randf_range(-1, 1)*spread)
+		var rid = world.get_world_2d().navigation_map
+		var closest_nav_point = NavigationServer2D.map_get_closest_point(rid, spawn)
+		
 		newAgent.position += spawn
 		add_child(newAgent)
 		agents.append(newAgent)

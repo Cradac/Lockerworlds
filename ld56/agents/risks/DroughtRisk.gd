@@ -6,7 +6,7 @@ func _init() -> void:
 	chance = 0.5
 	alert_range = 100
 	
-	visual_scene = preload("res://agents/risks/DrownRiskVisual.tscn")
+	visual_scene = preload("res://agents/risks/DraughtRiskVisual.tscn")
 	
 func trigger(poi: PointOfInterest, action_time: int) -> void:
 	# Todo

@@ -8,8 +8,11 @@ var locker_world
 var worlds: Array[World] = []
 
 var starting_moral = 50000
-var regenaration_rate = 50
-var simulated_action_chance = 0.05
+var regenaration_rate = 40
+var simulated_action_chance = 0.2
+
+var progressed_time = 0
+var time_to_reach = 50
 
 var timer: Timer
 var simulation_active: bool = false
@@ -31,7 +34,7 @@ func _ready():
 	timer.start()
 	
 	showcase_worlds()
-	#switch_world(0)
+	
 	
 
 func get_remaining_moral() -> int:
@@ -43,6 +46,7 @@ func get_remaining_moral() -> int:
 func _tick_simulation() -> void:
 	if not simulation_active:
 		return
+		
 	for world in worlds:
 		# Simulate actions if needed
 		if not world.rendered:
@@ -53,6 +57,10 @@ func _tick_simulation() -> void:
 		world.moral_damage = max(world.moral_damage - regenaration_rate, 0)
 	
 	check_moral()
+	progressed_time += 1
+	if progressed_time == time_to_reach:
+		print("You won!")
+		get_tree().paused = true
 
 func check_moral() -> void:
 	var remaining = get_remaining_moral()
@@ -72,7 +80,8 @@ func showcase_worlds():
 	await get_tree().create_timer(5.0).timeout
 	# TODO Show Message!
 	switch_to_locker()
-	print("end")
+	print("end showcase")
+	#switch_world(0)
 	simulation_active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

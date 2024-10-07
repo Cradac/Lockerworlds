@@ -19,7 +19,6 @@ var active_poi_array: Array[PointOfInterest] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
-	print("Init WOrld")
 	var cellPositions: Array[Vector2i] = tileMap.get_used_cells()
 	for position in cellPositions:
 		var tileData: TileData = tileMap.get_cell_tile_data(position)
@@ -46,7 +45,11 @@ func get_valid_poi() -> PointOfInterest:
 		print("No active PoI available")
 		return null
 	else:
-		return active_poi_array.pick_random()
+		var poi = active_poi_array.pick_random()
+		if poi.world.darknessRiskButton.status:
+			return poi
+		else:
+			return null 
 
 func update_poi_status(poi: PointOfInterest) -> void:
 	if poi.disabled:
@@ -58,9 +61,11 @@ func update_poi_status(poi: PointOfInterest) -> void:
 		active_poi_array.append(poi)
 
 func add_moral_dps(morale_dps: int) -> void:
+	print("Added moral dps ", morale_dps)
 	current_dps += morale_dps
 
 func remove_moral_dps(morale_dps: int) -> void:
+	print("Removed dps ", morale_dps)
 	current_dps = max(current_dps-morale_dps, 0)
 
 func do_simulation_tick() -> void:
@@ -72,6 +77,8 @@ func do_simulation_tick() -> void:
 			if agent.busy == 0:
 				if randf() < Simulation.simulated_action_chance:
 					var poi = get_valid_poi()
+					if poi == null:
+						continue
 					var possible_actions: Array = poi.possible_actions.get(poi.poi_type)
 					var action_class = possible_actions.pick_random()
 					var action: AgentAction = action_class.new() as AgentAction
@@ -86,3 +93,4 @@ func set_rendered(rendered: bool) -> void:
 
 func _on_back_button_pressed() -> void:
 	Simulation.switch_to_locker()
+	

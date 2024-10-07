@@ -1,24 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://pllur6u27txd"]
+[gd_scene load_steps=8 format=3 uid="uid://pllur6u27txd"]
 
-[ext_resource type="Texture2D" uid="uid://s6occagq2yhr" path="res://icon.svg" id="1_cc2kq"]
+[ext_resource type="Texture2D" uid="uid://7s17qvhhpr3f" path="res://assets/overworld/bubble_sprite_sheet.png" id="1_sd2ob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdl8c"]
 size = Vector2(100, 100)
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl63j"]
+atlas = ExtResource("1_sd2ob")
+region = Rect2(0, 0, 32, 64)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.76837e-07)
-scale = Vector2(0.78125, 0.78125)
-texture = ExtResource("1_cc2kq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5xfg"]
+atlas = ExtResource("1_sd2ob")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehuf4"]
+atlas = ExtResource("1_sd2ob")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pd7h"]
+atlas = ExtResource("1_sd2ob")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buqxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl63j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5xfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehuf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pd7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hdl8c")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -60.0
-offset_top = -26.0
-offset_right = 63.0
-offset_bottom = 23.0
-text = "Chuckles 
-I'm in Drowning"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_buqxs")
+autoplay = "default"
+frame_progress = 0.0727663
