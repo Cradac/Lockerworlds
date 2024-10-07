@@ -29,6 +29,7 @@ func resolve() -> void:
 	remove_child(visuals)
 	poi.set_disabled(false)
 	poi.world.remove_moral_dps(morale_damage_per_second)
+	queue_free()
 	pass
 	
 func _on_timeout() -> void:
