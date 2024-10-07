@@ -74,6 +74,11 @@ settings={
 2d_physics/layer_1="actors"
 2d_physics/layer_2="terrain"
 
+[navigation]
+
+2d/default_edge_connection_margin=5.0
+2d/default_link_connection_radius=20.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

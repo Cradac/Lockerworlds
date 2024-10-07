@@ -46,14 +46,6 @@ texture = ExtResource("3_os8u6")
 [node name="Overlay" parent="." instance=ExtResource("5_r1r4h")]
 z_index = 15
 
-[node name="Button" type="Button" parent="."]
-z_index = 11
-offset_left = 41.0
-offset_top = 39.0
-offset_right = 91.0
-offset_bottom = 70.0
-text = "BACK"
-
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AgentHandler" type="Node" parent="."]
@@ -65,3 +57,5 @@ spawn_point = Vector2(850, 350)
 [node name="DarknessRiskButton" parent="." instance=ExtResource("7_ck7ow")]
 z_index = 20
 position = Vector2(207, 515)
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
