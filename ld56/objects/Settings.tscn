@@ -19,13 +19,21 @@ offset_right = 228.0
 offset_bottom = 52.0
 text = "Settings"
 
-[node name="sound_label" type="Label" parent="."]
+[node name="master_volume_label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 153.0
 offset_right = 264.0
 offset_bottom = 176.0
 text = "Sound Volume:"
+
+[node name="sound_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 92.0
+offset_right = 261.0
+offset_bottom = 115.0
+text = "Master  Volume:"
 
 [node name="music_label" type="Label" parent="."]
 layout_mode = 0
@@ -41,6 +49,16 @@ offset_left = 431.0
 offset_top = 157.0
 offset_right = 942.0
 offset_bottom = 173.0
+max_value = 1.0
+step = 0.1
+value = 0.8
+
+[node name="master_slider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 95.0
+offset_right = 940.0
+offset_bottom = 111.0
 max_value = 1.0
 step = 0.1
 value = 0.8
@@ -69,6 +87,7 @@ offset_bottom = 392.0
 text = "Exit Game"
 
 [connection signal="changed" from="sound_slider" to="." method="_on_sound_slider_changed"]
+[connection signal="changed" from="master_slider" to="." method="_on_sound_slider_changed"]
 [connection signal="changed" from="music_slider" to="." method="_on_music_slider_changed"]
 [connection signal="pressed" from="Button_close" to="." method="_on_button_close_pressed"]
 [connection signal="pressed" from="Button_exit" to="." method="_on_button_exit_pressed"]
