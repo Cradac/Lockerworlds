@@ -10,8 +10,10 @@ var sound_player : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 var music_arr : Array[AudioStreamPlayer2D] = []
 #volumes
 var sound_volume : float = 0.8
-var music_volume : float = 0.0
+var music_volume : float = 0.8
 var master_volume : float = 0.8
+
+var settingsOpen : bool = false
 
 var active_music : AudioStreamPlayer2D = null
 var sound_dict = {}
@@ -33,6 +35,9 @@ func set_sound_volume(vol : float):
 func _ready() -> void:
 	init_music()
 	init_sound()
+	AudioServer.set_bus_volume_db(0, linear_to_db(master_volume))
+	AudioServer.set_bus_volume_db(1, linear_to_db(music_volume))
+	AudioServer.set_bus_volume_db(2, linear_to_db(sound_volume))
 	pass # Replace with function body.
 
 
@@ -50,6 +55,8 @@ func init_sound():
 		"lock_open": preload("res://sounds/lock_open.wav"),
 		"drought": preload("res://sounds/drought.wav"),
 		"locker_open": preload("res://sounds/locker_open.wav"),
+		"darkness": preload("res://sounds/darkness.wav"),
+		"drown": preload("res://sounds/drown.wav"),
 		"fire": preload("res://sounds/fire.wav")
 	}
 	for sound_key in sound_dict:

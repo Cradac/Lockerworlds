@@ -17,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_vbql8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_tp12d")
 
 [node name="Pointything" type="Sprite2D" parent="Area2D"]
