@@ -72,7 +72,7 @@ scroll_active = false
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 480.0
-offset_top = 866.0
+offset_top = 837.0
 offset_right = 1908.0
 offset_bottom = 1256.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -81,11 +81,12 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_font_sizes/bold_font_size = 70
 bbcode_enabled = true
 text = "[right]Attributions
-Music: Lars Austermeier
+Music by Lars Austermeier
 Bubble Sprites: “32x32 pixel bubbles sprites” by kia.itch.io
 Animated Fire by Nicole Marie T
 “Isometric Tiles Template for 32x32 pixel art” by route1rodent.itch.io
 “Small 8-direction Characters” by axulart.itch.io
+“Lightning VFX Free Pack” by govfx.itch.io
 "
 scroll_active = false
 
