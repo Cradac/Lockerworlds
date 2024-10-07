@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		pass
 
 func _on_button_close_pressed() -> void:
-	self.free()
+	pass
 
 
 func _on_button_exit_pressed() -> void:

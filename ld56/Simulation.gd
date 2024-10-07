@@ -27,7 +27,7 @@ func _ready():
 	timer.timeout.connect(_tick_moral_regeneration)
 	timer.start()
 	
-	switch_world(0)
+	#switch_world(0)
 	
 
 func get_remaining_moral() -> int:

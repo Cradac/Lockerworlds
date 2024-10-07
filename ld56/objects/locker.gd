@@ -67,6 +67,7 @@ func center_text(text):
 func check_code():
 	if LOCK_CODE == LOCK_POSITION:
 		print("richtig")
+		SettingsAndSound.play_sfx("lock_open")
 		lock.set_frame_and_progress(1,0)
 		if lock.animation_finished:
 			locker_opened.emit()
@@ -77,6 +78,7 @@ func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 	if event is InputEventMouseButton:
 		var evt = event as InputEventMouseButton
 		if evt.pressed && evt.button_index == 1:
+			SettingsAndSound.play_sfx("lock_click")
 			if is_left:
 				LOCK_POSITION[index] = (LOCK_POSITION[index] + 1) % 10
 			else:
