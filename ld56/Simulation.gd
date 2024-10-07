@@ -60,13 +60,13 @@ func _tick_simulation() -> void:
 	progressed_time += 1
 	if progressed_time == time_to_reach:
 		print("You won!")
-		get_tree().paused = true
+		goto_game_over(true)
 
 func check_moral() -> void:
 	var remaining = get_remaining_moral()
 	if remaining < 0:
 		print("Game over!")
-		get_tree().paused = true
+		goto_game_over(false)
 	else:
 		print("Remaining Moral: ", remaining)
 
@@ -97,27 +97,35 @@ func switch_to_locker() -> void:
 	SettingsAndSound.set_music(0,false) #ich bin ein Ziegelstein
 	goto_world(locker_world)
 
-func goto_scene(path):
+func goto_game_over(won: bool):
 	# Call deferred to fix potential crash or unexpected behavior of a running scene change
-	_deferred_goto_scene.call_deferred(path)
+	simulation_active = false
+	_deferred_game_over.call_deferred(won)
+	SettingsAndSound.set_music(0, false)
 
 func goto_world(world):
 	# Call deferred to fix potential crash or unexpected behavior of a running scene change
 	_deferred_goto_world.call_deferred(world)
 
-func _deferred_goto_scene(path):
+func _deferred_game_over(won: bool):
 	# It is now safe to remove the current scene.
-	current_scene.free()
+	if not current_scene == null:
+		current_scene.free()
 
 	# Load the new scene.
-	var s = ResourceLoader.load(path)
+	var s = ResourceLoader.load("res://objects/GameOver.tscn")
 
 	# Instance the new scene.
-	current_scene = s.instantiate()
+	var overlay: Control = s.instantiate()
+	var success_text: RichTextLabel = overlay.get_child(0)
+	if won:
+		success_text.text = "[center]You won![/center]"
+	else:
+		success_text.text = "[center]You lost![/center]"
 
 	# Add it to the active scene, as child of root.
-	get_tree().root.add_child(current_scene)
-	get_tree().current_scene = current_scene
+	get_tree().root.add_child(overlay)
+	get_tree().current_scene = overlay
 
 
 func _deferred_goto_world(world):
