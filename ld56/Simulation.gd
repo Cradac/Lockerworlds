@@ -102,7 +102,7 @@ func goto_game_over(won: bool):
 	# Call deferred to fix potential crash or unexpected behavior of a running scene change
 	simulation_active = false
 	_deferred_game_over.call_deferred(won)
-	SettingsAndSound.set_music(0, false)
+	SettingsAndSound.set_music(0)
 
 func goto_world(world):
 	# Call deferred to fix potential crash or unexpected behavior of a running scene change
