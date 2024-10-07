@@ -52,7 +52,6 @@ func alert_agents() -> void:
 		get_tree().call_group("agents", "alert_to_risk", self)
 	
 func _on_visual_input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
-	print(event)
 	if event is InputEventMouseButton:
 		resolve()
 	pass
