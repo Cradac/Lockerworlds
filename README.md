@@ -22,11 +22,12 @@ The source code of the game is published under the GPL v3 License.
 
 ## Attributions
 
-Animated Fire by Nicole Marie T
-“32x32 pixel bubbles sprites” by kia.itch.io
-“Isometric Tiles Template for 32x32 pixel art” by route1rodent.itch.io
-“Small 8-direction Characters” by axulart.itch.io
-“Lightning VFX Free Pack” by govfx.itch.io
+- Animated Fire by Nicole Marie T
+- “32x32 pixel bubbles sprites” by kia.itch.io
+- “Isometric Tiles Template for 32x32 pixel art” by route1rodent.itch.io
+- “Small 8-direction Characters” by axulart.itch.io
+- “Lightning VFX Free Pack” by govfx.itch.io
+- Music by Lars
 
 ## Links
 
