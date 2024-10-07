@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="ld56"
+config/name="Lockerworlds"
 run/main_scene="res://levels/locker_world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://assets/shroomy/shroomy-icon.png"
 config/icon="res://assets/shroomy/shroomy-icon.png"
 
 [audio]
