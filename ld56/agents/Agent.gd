@@ -126,6 +126,10 @@ func set_new_target():
 			if set_movement_target(target_poi.position):
 				break
 		attempt += 1
+		if attempt == 10:
+			print("Mercy Killing Stuck Agent at ", position)
+			queue_free()
+			return
 
 
 func _on_timer_timeout() -> void:

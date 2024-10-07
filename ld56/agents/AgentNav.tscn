@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://guf1mctsar35"]
 
 [node name="AgentNav" type="NavigationAgent2D"]
-path_max_distance = 80.0
+path_desired_distance = 15.0
+path_max_distance = 15.0
+path_postprocessing = 1
+simplify_path = true
 avoidance_enabled = true
-neighbor_distance = 150.0
+radius = 6.0
+neighbor_distance = 60.0
+debug_enabled = true

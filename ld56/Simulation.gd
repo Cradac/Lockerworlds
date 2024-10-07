@@ -2,7 +2,7 @@ extends Node
 
 var current_scene = null
 
-var world_scenes_paths: Array = ["res://levels/level1.tscn", "res://aitest.tscn"]
+var world_scenes_paths: Array = ["res://levels/level1.tscn", "res://levels/level2.tscn"]
 var locker_world
 
 var worlds: Array[World] = []

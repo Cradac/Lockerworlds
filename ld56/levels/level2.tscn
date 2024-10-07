@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dw485drlngsyw"]
+[gd_scene load_steps=6 format=4 uid="uid://clri1s87w0yhw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_1o14i"]
 [ext_resource type="PackedScene" uid="uid://ehvpmuops7cv" path="res://objects/iso-tilemap.tscn" id="2_pc4sb"]
 [ext_resource type="Texture2D" uid="uid://btt8gf2mxgva8" path="res://assets/overworld/locker2_open.png" id="3_os8u6"]
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="4_bx7d4"]
+[ext_resource type="PackedScene" uid="uid://s368bvxohmnp" path="res://objects/Overlay.tscn" id="5_r1r4h"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_1o14i")
@@ -39,6 +40,17 @@ y_sort_origin = 3
 z_index = 10
 position = Vector2(960, 540)
 texture = ExtResource("3_os8u6")
+
+[node name="Overlay" parent="." instance=ExtResource("5_r1r4h")]
+z_index = 15
+
+[node name="Button" type="Button" parent="."]
+z_index = 11
+offset_left = 41.0
+offset_top = 39.0
+offset_right = 91.0
+offset_bottom = 70.0
+text = "BACK"
 
 [node name="Timer" type="Timer" parent="."]
 
