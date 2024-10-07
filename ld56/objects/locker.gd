@@ -92,4 +92,6 @@ func set_id_label():
 
 func _on_lock_frame_changed() -> void:
 	await get_tree().create_timer(0.5).timeout 
+	lock.set_frame_and_progress(0,0)
 	locker_opened.emit()
+	
