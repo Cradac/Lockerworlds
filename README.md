@@ -1,3 +1,7 @@
+![starting animation of Lockerworld](images/starting_animation.gif)
+
+# Lockerworld
+
 ## Info
 
 Lockerworld is a game developed for the Ludum Dare 56 Game Jam with the topic Tiny Creatures in a timespan of 72 hours.
