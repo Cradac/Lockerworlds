@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dc2ok2vm83t5l"]
+[gd_scene load_steps=19 format=3 uid="uid://dc2ok2vm83t5l"]
 
 [ext_resource type="Script" path="res://objects/bubble.gd" id="1_ugqud"]
 [ext_resource type="Texture2D" uid="uid://bpegwltwmklog" path="res://assets/overworld/speechbubble.png" id="2_mvf3s"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://k5ikgca38iuf" path="res://assets/overworld/sickle.png" id="8_jali1"]
 [ext_resource type="Texture2D" uid="uid://bmo6yuyu3j67u" path="res://assets/overworld/hunger.png" id="9_e5hil"]
 [ext_resource type="Texture2D" uid="uid://thl3d2v1mmjt" path="res://assets/overworld/light.png" id="10_8rvcg"]
+[ext_resource type="Texture2D" uid="uid://bts2cyeteakpu" path="res://assets/overworld/godotzilla.png" id="11_a3i5m"]
 [ext_resource type="Texture2D" uid="uid://da34dnoagsuog" path="res://assets/overworld/power.png" id="11_m1b6g"]
 [ext_resource type="Texture2D" uid="uid://bl2f6x8s67y2r" path="res://assets/overworld/light-crossed-out.png" id="13_vj8ha"]
 [ext_resource type="Texture2D" uid="uid://dtkjj4ow1180u" path="res://assets/overworld/reading.png" id="15_xu7j6"]
@@ -95,6 +96,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_a3i5m")
+}],
+"loop": true,
+"name": &"godotzilla",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_jali1")
 }],
 "loop": true,
@@ -148,5 +157,5 @@ speed_scale = 0.0
 position = Vector2(-64, 17)
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_6pddk")
-animation = &"darkness"
+animation = &"godotzilla"
 speed_scale = 0.0
