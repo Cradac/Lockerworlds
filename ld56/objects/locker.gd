@@ -39,7 +39,6 @@ func generate_code():
 		LOCK_CODE[i-1] = rng.randi_range(0,9)
 
 func reset_lock_position():
-	lock.set_frame_and_progress(0,0)
 	var rng = RandomNumberGenerator.new()
 	while true:
 		for i in range(4):
@@ -47,6 +46,7 @@ func reset_lock_position():
 			LOCK_POSITION[i-1] = rng.randi_range(0,9)
 		if LOCK_POSITION != LOCK_CODE:
 			break
+	set_lock()
 
 func set_lock():
 	var lock_children = lock.get_children()
@@ -93,6 +93,7 @@ func set_id_label():
 	label.text=center_text(LOCKER_ID)
 
 func _on_lock_frame_changed() -> void:
+	lock.set_frame_and_progress(0,0)
 	await get_tree().create_timer(0.5).timeout
 	reset_lock_position()
 	locker_opened.emit(colour)
