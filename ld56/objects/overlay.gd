@@ -17,8 +17,8 @@ func _process(delta: float) -> void:
 	self.global_position = future_position
 	var angle = future_position.angle_to_point(bottom_right_corner)
 	self.set_global_rotation(angle)
-
-
+	if Input.is_action_just_released("settings"):
+		pass
 
 func controller(delta):
 	var movement = Vector2(0,0)
