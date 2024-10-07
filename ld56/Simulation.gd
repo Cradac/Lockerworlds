@@ -33,6 +33,8 @@ func _ready():
 	timer.timeout.connect(_tick_simulation)
 	timer.start()
 	
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	
 	showcase_worlds()
 	
 	

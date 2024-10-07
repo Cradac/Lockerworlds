@@ -13,11 +13,12 @@ anchor_right = 1.0
 offset_bottom = 50.0
 grow_horizontal = 2
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("overlay", "time_progress", "morale_progress")]
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("overlay", "time_progress", "morale_progress", "morale_clip")]
 script = ExtResource("1_vbql8")
 overlay = NodePath("..")
-time_progress = NodePath("../TimeProgressBar")
-morale_progress = NodePath("../Morale")
+time_progress = NodePath("Pointything/TimeProgressBar")
+morale_progress = NodePath("Pointything/Polygon2D/Morale")
+morale_clip = NodePath("Pointything/Polygon2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
@@ -27,18 +28,25 @@ shape = SubResource("CircleShape2D_tp12d")
 position = Vector2(1227, -86)
 texture = ExtResource("2_o7trs")
 
-[node name="TimeProgressBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_top = 1050.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="TimeProgressBar" type="ProgressBar" parent="Area2D/Pointything"]
+offset_left = -447.0
+offset_top = 16.0
+offset_right = -332.0
+offset_bottom = 60.0
+rotation = -1.5708
 theme_override_fonts/font = ExtResource("3_fgohy")
 step = 1.0
 
-[node name="Morale" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 30.0
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/Pointything"]
+position = Vector2(-609, -47)
+polygon = PackedVector2Array(-8, -58, 20, -53, 42, -41, 60, -26, 69, -7, 69, 12, 61, 24, 50, 35, 36, 50, 12, 58, -9, 59, -36, 43, -57, 25, -67, 4, -66, -20, -48, -43, -32, -54, -18, -58)
+
+[node name="Morale" type="ProgressBar" parent="Area2D/Pointything/Polygon2D"]
+offset_left = -70.0
+offset_top = 64.0
+offset_right = 54.0
+offset_bottom = 208.0
+rotation = -1.5708
 theme_override_fonts/font = ExtResource("3_fgohy")
 step = 1.0
 value = 100.0
