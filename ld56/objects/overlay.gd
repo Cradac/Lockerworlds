@@ -36,7 +36,9 @@ func _process(delta: float) -> void:
 	var angle = future_position.angle_to_point(bottom_right_corner)
 	self.set_global_rotation(angle)
 	if Input.is_action_just_released("settings") && !SettingsAndSound.settingsOpen :		
-		get_parent().add_child(preload("res://objects/Settings.tscn").instantiate())
+		var settings = preload("res://objects/Settings.tscn").instantiate()
+		settings.z_index = 60
+		get_parent().add_child(settings)
 		SettingsAndSound.settingsOpen = true
 		
 	time_progress.value = Simulation.progressed_time

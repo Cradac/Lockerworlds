@@ -89,11 +89,12 @@ func _process(delta: float) -> void:
 	pass
 
 func switch_world(idx: int) -> void:
+	SettingsAndSound.set_music(idx + 1,false) #dirty and hacky but time lul
 	goto_world(worlds[idx])
 	
 	
 func switch_to_locker() -> void:
-	print("Go to locker world")
+	SettingsAndSound.set_music(0,false) #ich bin ein Ziegelstein
 	goto_world(locker_world)
 
 func goto_scene(path):
