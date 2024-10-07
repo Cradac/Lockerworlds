@@ -17,7 +17,7 @@ func _ready() -> void:
 	select_action_lockers()
 	get_viewport().physics_object_picking_first_only = true
 	get_viewport().physics_object_picking_sort = true
-	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
