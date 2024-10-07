@@ -53,7 +53,8 @@ func actor_setup():
 
 	bubble.hide()
 	# Now that the navigation map is no longer empty, set the movement target.
-	set_movement_target(get_random_pos())
+	target_poi = world.get_valid_poi()
+	set_movement_target(target_poi.position)
 
 func set_movement_target(movement_target: Vector2):
 	#debug.text = str(movement_target.x) + "," + str(movement_target.y)
