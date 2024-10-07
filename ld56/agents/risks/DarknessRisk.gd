@@ -17,7 +17,7 @@ func resolve() -> void:
 func _on_timeout() -> void:
 	if poi.world.rendered:
 		SettingsAndSound.play_sfx("darkness")
-		poi.world.darknessRiskButton.status = false
+	poi.world.darknessRiskButton.status = false
 	super()
 	visuals.z_index = 10
 
