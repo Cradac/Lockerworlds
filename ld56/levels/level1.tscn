@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=4 uid="uid://ct52q30qc7d2k"]
+[gd_scene load_steps=15 format=4 uid="uid://ct52q30qc7d2k"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gjlbx"]
 [ext_resource type="PackedScene" uid="uid://ehvpmuops7cv" path="res://objects/iso-tilemap.tscn" id="1_o8ke7"]
 [ext_resource type="Texture2D" uid="uid://btt8gf2mxgva8" path="res://assets/overworld/locker2_open.png" id="2_gq4sm"]
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="4_iherx"]
-[ext_resource type="PackedScene" uid="uid://s368bvxohmnp" path="res://objects/Overlay.tscn" id="5_8dhds"]
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="5_8dhds"]
 [ext_resource type="PackedScene" uid="uid://ba2nvywlcymf5" path="res://objects/back_button.tscn" id="5_gj7u2"]
+[ext_resource type="PackedScene" uid="uid://jktam88wisu1" path="res://agents/risks/DarknessRiskButton.tscn" id="7_rfs7l"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_arc6y"]
 a = Vector2(-1, 0)
@@ -173,3 +174,7 @@ affect_navigation_mesh = true
 navigation_polygon = SubResource("NavigationPolygon_411ce")
 
 [node name="BackButton" parent="." instance=ExtResource("5_gj7u2")]
+
+[node name="DarknessRiskButton" parent="." instance=ExtResource("7_rfs7l")]
+z_index = 20
+position = Vector2(207, 515)

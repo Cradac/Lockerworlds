@@ -9,6 +9,8 @@ var current_dps: int = 0
 
 @onready var timer: Timer = $Timer
 
+@onready var darknessRiskButton: Area2D = $DarknessRiskButton
+
 var rendered: bool = true
 
 var poi_array: Array[PointOfInterest] = []
