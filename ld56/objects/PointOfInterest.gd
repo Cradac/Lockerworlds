@@ -23,7 +23,8 @@ var possible_actions: Dictionary = {
 	POI_TYPE.CAMPFIRE: [CookAction, ChillAction],
 	POI_TYPE.RIVER: [ChillAction, FishAction],
 	POI_TYPE.GARDEN: [ChillAction, HarvestAction],
-	POI_TYPE.LAMP: [ChillAction, ReadAction]
+	POI_TYPE.LAMP: [ChillAction, ReadAction],
+	POI_TYPE.GODOTZILLA: [ChillAction]
 }
 
 func set_disabled(disabled: bool):
