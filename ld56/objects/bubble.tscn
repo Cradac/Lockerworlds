@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dc2ok2vm83t5l"]
+[gd_scene load_steps=20 format=3 uid="uid://dc2ok2vm83t5l"]
 
 [ext_resource type="Script" path="res://objects/bubble.gd" id="1_ugqud"]
 [ext_resource type="Texture2D" uid="uid://bpegwltwmklog" path="res://assets/overworld/speechbubble.png" id="2_mvf3s"]
@@ -12,10 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://k5ikgca38iuf" path="res://assets/overworld/sickle.png" id="8_jali1"]
 [ext_resource type="Texture2D" uid="uid://bmo6yuyu3j67u" path="res://assets/overworld/hunger.png" id="9_e5hil"]
 [ext_resource type="Texture2D" uid="uid://thl3d2v1mmjt" path="res://assets/overworld/light.png" id="10_8rvcg"]
-[ext_resource type="Texture2D" uid="uid://bts2cyeteakpu" path="res://assets/overworld/godotzilla.png" id="11_a3i5m"]
+[ext_resource type="Texture2D" uid="uid://y3mul4l47sdj" path="res://assets/overworld/godotzilla_small.png" id="11_immf6"]
 [ext_resource type="Texture2D" uid="uid://da34dnoagsuog" path="res://assets/overworld/power.png" id="11_m1b6g"]
 [ext_resource type="Texture2D" uid="uid://bl2f6x8s67y2r" path="res://assets/overworld/light-crossed-out.png" id="13_vj8ha"]
 [ext_resource type="Texture2D" uid="uid://dtkjj4ow1180u" path="res://assets/overworld/reading.png" id="15_xu7j6"]
+[ext_resource type="Texture2D" uid="uid://dtxy11070pj8i" path="res://assets/overworld/praising.png" id="16_1fd8i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_310v8"]
 animations = [{
@@ -42,7 +43,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_gvq2f")
 }],
-"loop": true,
+"loop": false,
 "name": &"beefing",
 "speed": 5.0
 }, {
@@ -50,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_6i0r5")
 }],
-"loop": true,
+"loop": false,
 "name": &"chilling",
 "speed": 5.0
 }, {
@@ -58,7 +59,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_fp5bw")
 }],
-"loop": true,
+"loop": false,
 "name": &"cooking",
 "speed": 5.0
 }, {
@@ -66,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_vj8ha")
 }],
-"loop": true,
+"loop": false,
 "name": &"darkness",
 "speed": 5.0
 }, {
@@ -74,7 +75,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_byt0k")
 }],
-"loop": true,
+"loop": false,
 "name": &"drowning",
 "speed": 5.0
 }, {
@@ -82,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_no1r1")
 }],
-"loop": true,
+"loop": false,
 "name": &"fire",
 "speed": 5.0
 }, {
@@ -90,15 +91,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_7of8g")
 }],
-"loop": true,
+"loop": false,
 "name": &"fishing",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_a3i5m")
+"texture": ExtResource("11_immf6")
 }],
-"loop": true,
+"loop": false,
 "name": &"godotzilla",
 "speed": 5.0
 }, {
@@ -106,7 +107,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_jali1")
 }],
-"loop": true,
+"loop": false,
 "name": &"harvesting",
 "speed": 5.0
 }, {
@@ -114,7 +115,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_e5hil")
 }],
-"loop": true,
+"loop": false,
 "name": &"hunger",
 "speed": 5.0
 }, {
@@ -122,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_8rvcg")
 }],
-"loop": true,
+"loop": false,
 "name": &"light",
 "speed": 5.0
 }, {
@@ -130,15 +131,23 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_m1b6g")
 }],
-"loop": true,
+"loop": false,
 "name": &"power",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_1fd8i")
+}],
+"loop": false,
+"name": &"praying",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("15_xu7j6")
 }],
-"loop": true,
+"loop": false,
 "name": &"reading",
 "speed": 5.0
 }]
@@ -157,5 +166,5 @@ speed_scale = 0.0
 position = Vector2(-64, 17)
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_6pddk")
-animation = &"godotzilla"
+animation = &"praying"
 speed_scale = 0.0
