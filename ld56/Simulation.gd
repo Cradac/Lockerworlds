@@ -72,10 +72,10 @@ func check_moral() -> void:
 
 func showcase_worlds():
 	print("start showcase")
-	switch_world(0)
+	switch_world(0, 0)
 	# TODO Show Message!
 	await get_tree().create_timer(5.0).timeout
-	switch_world(1)
+	switch_world(1, 0)
 	# TODO Show Message!
 	await get_tree().create_timer(5.0).timeout
 	# TODO Show Message!
@@ -88,13 +88,14 @@ func showcase_worlds():
 func _process(delta: float) -> void:
 	pass
 
-func switch_world(idx: int) -> void:
-	SettingsAndSound.set_music(idx + 1,false) #dirty and hacky but time lul
+func switch_world(idx: int, colour: int) -> void:
+	worlds[idx].colour = colour
+	SettingsAndSound.set_music(1 + 2*idx) #dirty and hacky but time lul
 	goto_world(worlds[idx])
 	
 	
 func switch_to_locker() -> void:
-	SettingsAndSound.set_music(0,false) #ich bin ein Ziegelstein
+	SettingsAndSound.set_music(0) #ich bin ein Ziegelstein
 	goto_world(locker_world)
 
 func goto_game_over(won: bool):

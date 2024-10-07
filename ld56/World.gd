@@ -10,15 +10,16 @@ var current_dps: int = 0
 
 @onready var darknessRiskButton: Area2D = $DarknessRiskButton
 @onready var overlay: Control = $Overlay
+@onready var overlaySprite: AnimatedSprite2D = $OverlaySprite
 
 var rendered: bool = true
+var colour: int = 0
 
 var poi_array: Array[PointOfInterest] = []
 var active_poi_array: Array[PointOfInterest] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	var cellPositions: Array[Vector2i] = tileMap.get_used_cells()
 	for position in cellPositions:
 		var tileData: TileData = tileMap.get_cell_tile_data(position)
@@ -35,8 +36,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	overlaySprite.set_frame_and_progress(colour, 0)
 	if current_dps >= 30:
-		SettingsAndSound.set_music(SettingsAndSound.current_world,true)
+		if !(SettingsAndSound.current_index == 2 or SettingsAndSound.current_index == 4):
+			SettingsAndSound.set_music(SettingsAndSound.current_index + 1)
+	else:
+		if !(SettingsAndSound.current_index == 1 or SettingsAndSound.current_index == 3):
+			SettingsAndSound.set_music(SettingsAndSound.current_index - 1)
 
 func get_valid_poi() -> PointOfInterest:
 	if not Simulation.simulation_active:

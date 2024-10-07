@@ -1,7 +1,7 @@
 class_name Risk extends Node2D
 
 var morale_damage_per_second: int = 5
-var emoji: String = "⚠️"
+var emoji: String = "beefing"
 var chance: float = 0.05
 
 var alert_range: int = 300

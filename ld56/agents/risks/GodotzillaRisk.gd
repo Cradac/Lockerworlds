@@ -1,9 +1,9 @@
-class_name FireRisk extends Risk
+class_name GodotzillaRisk extends Risk
 
 func _init() -> void:
 	morale_damage_per_second = 20
 	emoji = "godotzilla"
-	chance = 0.3
+	chance = 0.05
 	alert_range = 150
 	
 	visual_scene = preload("res://agents/risks/GodotzillaRiskVisual.tscn")

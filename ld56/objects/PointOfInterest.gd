@@ -24,7 +24,7 @@ var possible_actions: Dictionary = {
 	POI_TYPE.RIVER: [ChillAction, FishAction],
 	POI_TYPE.GARDEN: [ChillAction, HarvestAction],
 	POI_TYPE.LAMP: [ChillAction, ReadAction],
-	POI_TYPE.GODOTZILLA: [ChillAction]
+	POI_TYPE.GODOTZILLA: [ChillAction, PraiseAction]
 }
 
 func set_disabled(disabled: bool):

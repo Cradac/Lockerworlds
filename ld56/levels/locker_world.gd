@@ -54,11 +54,11 @@ func select_action_lockers():
 	WORLD_2_LOCKER.locker_opened.connect(_on_locker_2_open);
 	print(WORLD_2_LOCKER.name)
 
-func _on_locker_1_open() -> void:
-	Simulation.switch_world(0)
+func _on_locker_1_open(colour: int) -> void:
+	Simulation.switch_world(0, colour)
 
-func _on_locker_2_open() -> void:
-	Simulation.switch_world(1)
+func _on_locker_2_open(colour: int) -> void:
+	Simulation.switch_world(1, colour)
 
 
 func _on_locker_input_event(viewport: Node, event: InputEvent, shape_idx: int, index: int) -> void:

@@ -20,32 +20,12 @@ var current_index = 1
 var active_music : AudioStreamPlayer2D = locker_music
 var sound_dict = {}
 
-func set_music(lvl : int, drama : bool):
-	if music_arr == []:
+func set_music(lvl : int):
+	
+	if music_arr == [] || current_index == lvl:
 		return
-	current_world = lvl
-	if lvl == 0:
-		switch_music(music_arr[current_index],music_arr[0])
-		#music_arr[0]
-		current_index = 0
-	if lvl == 1:
-		if drama:
-			switch_music(music_arr[current_index],music_arr[2])
-			#music_arr[2].volume_db = 0.0
-			current_index = 2
-		else:
-			switch_music(music_arr[current_index],music_arr[1])
-			#music_arr[1].volume_db = 0.0
-			current_index = 1
-	else:
-		if drama:
-			switch_music(music_arr[current_index],music_arr[4])
-			#music_arr[4].volume_db = 0.0
-			current_index = 4
-		else:
-			switch_music(music_arr[current_index],music_arr[3])
-			#music_arr[3].volume_db = 0.0
-			current_index = 3
+	switch_music(music_arr[current_index],music_arr[lvl])
+	current_index = lvl
 
 func set_master_volume(vol : float):
 	master_volume = vol
