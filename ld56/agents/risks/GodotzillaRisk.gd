@@ -3,7 +3,7 @@ class_name GodotzillaRisk extends Risk
 func _init() -> void:
 	morale_damage_per_second = 250
 	emoji = "godotzilla"
-	chance = 0.05
+	chance = 0.08
 	alert_range = 1000
 	
 	visual_scene = preload("res://agents/risks/GodotzillaRiskVisual.tscn")

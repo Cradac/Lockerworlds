@@ -7,9 +7,9 @@ var locker_world
 
 var worlds: Array[World] = []
 
-var starting_moral = 60000
+var starting_moral = 55000
 var regenaration_rate = 0
-var simulated_action_chance = 0.05
+var simulated_action_chance = 0.07
 
 var progressed_time = 0
 var time_to_reach = 240
