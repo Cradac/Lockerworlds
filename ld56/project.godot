@@ -13,7 +13,7 @@ config_version=5
 config/name="ld56"
 run/main_scene="res://levels/locker_world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/shroomy/shroomy-icon.png"
 
 [audio]
 
