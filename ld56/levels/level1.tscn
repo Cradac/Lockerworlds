@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="4_iherx"]
 [ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="5_8dhds"]
 [ext_resource type="PackedScene" uid="uid://ba2nvywlcymf5" path="res://objects/back_button.tscn" id="5_gj7u2"]
+[ext_resource type="PackedScene" uid="uid://jktam88wisu1" path="res://agents/risks/DarknessRiskButton.tscn" id="7_rfs7l"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_arc6y"]
 a = Vector2(-1, 0)
@@ -219,3 +220,7 @@ start_position = Vector2(947, 426)
 end_position = Vector2(955, 426)
 
 [node name="BackButton" parent="." instance=ExtResource("5_gj7u2")]
+
+[node name="DarknessRiskButton" parent="." instance=ExtResource("7_rfs7l")]
+z_index = 20
+position = Vector2(207, 515)

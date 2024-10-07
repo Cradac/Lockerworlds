@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://agents/AgentHandler.gd" id="4_bx7d4"]
 [ext_resource type="PackedScene" uid="uid://ba2nvywlcymf5" path="res://objects/back_button.tscn" id="5_kw3ny"]
 [ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="5_r1r4h"]
+[ext_resource type="PackedScene" uid="uid://jktam88wisu1" path="res://agents/risks/DarknessRiskButton.tscn" id="7_ck7ow"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_1o14i")
@@ -45,14 +46,6 @@ texture = ExtResource("3_os8u6")
 [node name="Overlay" parent="." instance=ExtResource("5_r1r4h")]
 z_index = 15
 
-[node name="Button" type="Button" parent="."]
-z_index = 11
-offset_left = 41.0
-offset_top = 39.0
-offset_right = 91.0
-offset_bottom = 70.0
-text = "BACK"
-
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AgentHandler" type="Node" parent="."]
@@ -60,3 +53,7 @@ script = ExtResource("4_bx7d4")
 spawn_point = Vector2(850, 350)
 
 [node name="BackButton" parent="." instance=ExtResource("5_kw3ny")]
+
+[node name="DarknessRiskButton" parent="." instance=ExtResource("7_ck7ow")]
+z_index = 20
+position = Vector2(207, 515)

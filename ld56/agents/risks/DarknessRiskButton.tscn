@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://jktam88wisu1"]
+
+[ext_resource type="Texture2D" uid="uid://bqqe7mglfof8l" path="res://assets/overworld/switch_off.png" id="1_210n1"]
+[ext_resource type="Script" path="res://agents/risks/darkness_risk_button.gd" id="1_m4r7s"]
+[ext_resource type="Texture2D" uid="uid://dakc50gv13b1d" path="res://assets/overworld/switch_on.png" id="2_frlc8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_am8ho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_210n1")
+}],
+"loop": false,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frlc8")
+}],
+"loop": false,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xc7li"]
+size = Vector2(225, 531)
+
+[node name="DarknessRiskButton" type="Area2D"]
+script = ExtResource("1_m4r7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_am8ho")
+animation = &"on"
+autoplay = "on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 27.5)
+shape = SubResource("RectangleShape2D_xc7li")
