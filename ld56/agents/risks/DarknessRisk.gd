@@ -1,7 +1,7 @@
 class_name DarknessRisk extends Risk
 
 func _init() -> void:
-	morale_damage_per_second = 100
+	morale_damage_per_second = 30
 	emoji = "darkness"
 	chance = 0.15
 	alert_range = 1000

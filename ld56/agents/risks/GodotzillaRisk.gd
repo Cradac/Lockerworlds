@@ -1,7 +1,7 @@
 class_name GodotzillaRisk extends Risk
 
 func _init() -> void:
-	morale_damage_per_second = 500
+	morale_damage_per_second = 250
 	emoji = "godotzilla"
 	chance = 0.05
 	alert_range = 1000
