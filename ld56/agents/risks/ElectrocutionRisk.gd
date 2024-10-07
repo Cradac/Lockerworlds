@@ -16,5 +16,5 @@ func resolve() -> void:
 	super()
 	
 func _on_timeout() -> void:	
-	
+	SettingsAndSound.play_sfx("electrocution")
 	super()

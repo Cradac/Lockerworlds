@@ -69,8 +69,8 @@ func check_code():
 		print("richtig")
 		SettingsAndSound.play_sfx("lock_open")
 		lock.set_frame_and_progress(1,0)
-		if lock.animation_finished:
-			locker_opened.emit()
+		SettingsAndSound.play_sfx("locker_open")
+		#locker_opened.emit()
 
 
 
@@ -90,3 +90,11 @@ func _lock_clicked(event: InputEvent, is_left: bool, index: int) -> void:
 
 func set_id_label():
 	label.text=center_text(LOCKER_ID)
+
+
+func _on_lock_animation_finished() -> void:
+	locker_opened.emit()
+
+
+#func _on_lock_frame_changed() -> void:
+	#locker_opened.emit()

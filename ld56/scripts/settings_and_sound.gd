@@ -48,7 +48,9 @@ func init_sound():
 		"eletrocute": preload("res://sounds/electrocute.wav"),
 		"lock_click": preload("res://sounds/lock_click.wav"),
 		"lock_open": preload("res://sounds/lock_open.wav"),
-		"drought": preload("res://sounds/drought.wav")
+		"drought": preload("res://sounds/drought.wav"),
+		"locker_open": preload("res://sounds/locker_open.wav"),
+		"fire": preload("res://sounds/fire.wav")
 	}
 	for sound_key in sound_dict:
 		var strim = AudioStreamPlayer2D.new()

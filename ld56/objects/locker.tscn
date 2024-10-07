@@ -285,6 +285,7 @@ bbcode_enabled = true
 scroll_active = false
 tab_size = 8
 
+[connection signal="animation_finished" from="Locker/Locker/Lock" to="." method="_on_lock_animation_finished"]
 [connection signal="gui_input" from="Locker/Locker/Lock/0/lock_l" to="." method="_lock_clicked" binds= [true, 0]]
 [connection signal="gui_input" from="Locker/Locker/Lock/0/lock_r" to="." method="_lock_clicked" binds= [false, 0]]
 [connection signal="gui_input" from="Locker/Locker/Lock/1/lock_l" to="." method="_lock_clicked" binds= [true, 1]]

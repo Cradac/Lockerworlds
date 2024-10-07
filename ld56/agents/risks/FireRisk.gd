@@ -16,6 +16,5 @@ func resolve() -> void:
 	super()
 	
 func _on_timeout() -> void:
-	# TODO Create Fire Sprites
-	
+	SettingsAndSound.play_sfx("fire")
 	super()
