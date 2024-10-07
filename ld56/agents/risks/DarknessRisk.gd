@@ -17,6 +17,8 @@ func resolve() -> void:
 	super()
 	
 func _on_timeout() -> void:
+	SettingsAndSound.play_sfx("darkness")
+	world.darknessRiskButton.status = false
 	super()
 	visuals.z_index = 10
 
