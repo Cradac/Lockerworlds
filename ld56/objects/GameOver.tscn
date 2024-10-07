@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0e3lv8xoiper"]
+[gd_scene load_steps=6 format=3 uid="uid://c0e3lv8xoiper"]
 
 [ext_resource type="Script" path="res://objects/game_over.gd" id="1_7igbs"]
 [ext_resource type="Texture2D" uid="uid://cfwgjhfsproaq" path="res://assets/overworld/background.jpeg" id="1_h5ckm"]
 [ext_resource type="Texture2D" uid="uid://bts2cyeteakpu" path="res://assets/overworld/godotzilla.png" id="2_2nq6b"]
 [ext_resource type="SystemFont" uid="uid://dwsducdgjal7l" path="res://objects/font.tres" id="3_7j8s7"]
+[ext_resource type="PackedScene" uid="uid://dntw6pswordeh" path="res://objects/Overlay.tscn" id="5_lphk5"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -97,5 +98,8 @@ offset_bottom = 78.0
 theme_override_fonts/font = ExtResource("3_7j8s7")
 theme_override_font_sizes/font_size = 33
 text = "Exit Game"
+
+[node name="Overlay" parent="." instance=ExtResource("5_lphk5")]
+layout_mode = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
