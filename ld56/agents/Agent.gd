@@ -26,6 +26,7 @@ var nav_agent_type = preload("res://agents/AgentNav.tscn")
 
 var world: World
 var target_poi: PointOfInterest
+var busy: int
 
 
 func _ready():
@@ -95,12 +96,12 @@ func _on_target_reached() -> void:
 		var action_class = possible_actions.pick_random()
 		var action: AgentAction = action_class.new() as AgentAction
 
-		var timeout: int = action.do_action_at(target_poi)
+		busy = action.do_action_at(target_poi)
 		bubble.set_action_type(action.emoji)
 		bubble.set_bubble_type("thinking")
 		bubble.show()
 		#debug.text = action.emoji
-		timer.start(timeout)
+		timer.start(busy)
 		return
 	else:
 		set_new_target()
@@ -133,6 +134,7 @@ func set_new_target():
 
 
 func _on_timer_timeout() -> void:
+	busy = 0
 	set_new_target()
 
 func alert_to_risk(risk: Risk) -> void:
@@ -149,6 +151,7 @@ func alert_to_risk(risk: Risk) -> void:
 		create_nav_agent()
 		target_poi = null
 		set_movement_target(get_random_pos())
+		busy = 0
 
 func get_random_pos() -> Vector2:
 	var rid = navigation_agent.get_navigation_map()

@@ -70,7 +70,7 @@ func check_code():
 		SettingsAndSound.play_sfx("lock_open")
 		lock.set_frame_and_progress(1,0)
 		SettingsAndSound.play_sfx("locker_open")
-		#locker_opened.emit()
+		locker_opened.emit()
 
 
 

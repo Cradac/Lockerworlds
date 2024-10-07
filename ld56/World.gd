@@ -5,7 +5,6 @@ var current_dps: int = 0
 
 @onready var agents: AgentHandler = $AgentHandler
 @onready var tileMap: TileMapLayer = $layer1
-@onready var debug: Label = $Label
 
 @onready var timer: Timer = $Timer
 
@@ -19,6 +18,7 @@ var active_poi_array: Array[PointOfInterest] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
+	print("Init WOrld")
 	var cellPositions: Array[Vector2i] = tileMap.get_used_cells()
 	for position in cellPositions:
 		var tileData: TileData = tileMap.get_cell_tile_data(position)
@@ -29,15 +29,18 @@ func _ready() -> void:
 			poi_array.append(PointOfInterest.new(customData, global_pos, self))
 
 	active_poi_array = poi_array.duplicate()
-
-	timer.timeout.connect(_on_second_timeout)
+	
+	agents.spawn_agents()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 func get_valid_poi() -> PointOfInterest:
+	if not Simulation.simulation_active:
+		return null
 	if active_poi_array.is_empty():
 		print("No active PoI available")
 		return null
@@ -59,9 +62,23 @@ func add_moral_dps(morale_dps: int) -> void:
 func remove_moral_dps(morale_dps: int) -> void:
 	current_dps = max(current_dps-morale_dps, 0)
 
-func _on_second_timeout() -> void:
+func do_simulation_tick() -> void:
 	#moral_damage += current_dps
-	debug.text = "Total: "+ str(moral_damage) + " DPS: "+str(current_dps)
+	#debug.text = "Total: "+ str(moral_damage) + " DPS: "+str(current_dps)
+	if not rendered:
+		# Simulate Actions
+		for agent in agents.agents:
+			if agent.busy == 0:
+				if randf() < Simulation.simulated_action_chance:
+					var poi = get_valid_poi()
+					var possible_actions: Array = poi.possible_actions.get(poi.poi_type)
+					var action_class = possible_actions.pick_random()
+					var action: AgentAction = action_class.new() as AgentAction
+
+					agent.busy = action.do_action_at(poi)
+					print("Simulating action", action)
+			else:
+				agent.busy -= 1
 
 func set_rendered(rendered: bool) -> void:
 	self.rendered = rendered
